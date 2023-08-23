@@ -1,8 +1,9 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/gsl_flow/gsl_flow_animations.dart';
 import '/gsl_flow/gsl_flow_util.dart';
-import '/gsl_flow/gsl_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -154,7 +155,7 @@ class _HomePageState extends State<HomePage>
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: GSLAppTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFF1F4F8),
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -175,7 +176,7 @@ class _HomePageState extends State<HomePage>
                       },
                       child: Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: GSLAppTheme.of(context).primary,
+                        color: Color(0xFF4B39EF),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40),
                         ),
@@ -209,14 +210,24 @@ class _HomePageState extends State<HomePage>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Zoe Tagboto',
-                            style: GSLAppTheme.of(context).titleLarge,
+                            currentUserEmail,
+                            style: GoogleFonts.getFont(
+        'Outfit',
+        color: Color(0xFF14181B),
+        fontWeight: FontWeight.w500,
+        fontSize: 22.0,
+      ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
-                              'Good morning Zoe!',
-                              style: GSLAppTheme.of(context).labelMedium,
+                              'Good morning!',
+                              style: GoogleFonts.getFont(
+        'Readex Pro',
+        color: Color(0xFF95A1AC),
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      ),
                             ),
                           ),
                         ],
@@ -229,14 +240,19 @@ class _HomePageState extends State<HomePage>
                 padding: EdgeInsetsDirectional.fromSTEB(16, 12, 0, 0),
                 child: Text(
                   'Categories',
-                  style: GSLAppTheme.of(context).headlineSmall,
+                  style: GoogleFonts.getFont(
+        'Outfit',
+        color: Color(0xFF14181B),
+        fontWeight: FontWeight.w500,
+        fontSize: 24.0,
+      ),
                 ),
               ),
               Container(
                 width: double.infinity,
                 height: 250,
                 decoration: BoxDecoration(
-                  color: GSLAppTheme.of(context).primaryBackground,
+                  color: Color(0xFFF1F4F8),
                 ),
                 child: ListView(
                   padding: EdgeInsets.zero,
@@ -263,8 +279,7 @@ class _HomePageState extends State<HomePage>
                           width: 230,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: GSLAppTheme.of(context)
-                                .secondaryBackground,
+                            color: Color(0xFFFFFFFF),
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 4,
@@ -294,8 +309,8 @@ class _HomePageState extends State<HomePage>
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
-                                        GSLAppTheme.of(context).primary,
-                                        GSLAppTheme.of(context).secondary
+                                        Color(0xFF4B39EF),
+                                        Color(0xFF39D2C0)
                                       ],
                                       stops: [0, 1],
                                       begin: AlignmentDirectional(0, -1),
@@ -336,18 +351,14 @@ class _HomePageState extends State<HomePage>
                                         ),
                                         Text(
                                           'Alphabets',
-                                          style: GSLAppTheme.of(context)
-                                              .titleMedium
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.white,
                                               ),
                                         ),
                                         Text(
                                           '26 Items',
-                                          style: GSLAppTheme.of(context)
-                                              .bodyMedium
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.white,
                                               ),
@@ -370,7 +381,7 @@ class _HomePageState extends State<HomePage>
                         height: 50,
                         decoration: BoxDecoration(
                           color:
-                              GSLAppTheme.of(context).secondaryBackground,
+                              Color(0xFFFFFFFF),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4,
@@ -400,7 +411,7 @@ class _HomePageState extends State<HomePage>
                                 width: double.infinity,
                                 height: 140,
                                 decoration: BoxDecoration(
-                                  color: GSLAppTheme.of(context).tertiary,
+                                  color: Color(0xFFEE8B60),
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0),
                                     bottomRight: Radius.circular(0),
@@ -435,18 +446,14 @@ class _HomePageState extends State<HomePage>
                                       ),
                                       Text(
                                         'Family',
-                                        style: GSLAppTheme.of(context)
-                                            .titleMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
                                       ),
                                       Text(
                                         '16 Items',
-                                        style: GSLAppTheme.of(context)
-                                            .bodyMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
@@ -468,7 +475,7 @@ class _HomePageState extends State<HomePage>
                         height: 50,
                         decoration: BoxDecoration(
                           color:
-                              GSLAppTheme.of(context).secondaryBackground,
+                              Color(0xFFFFFFFF),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4,
@@ -498,8 +505,8 @@ class _HomePageState extends State<HomePage>
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
-                                      GSLAppTheme.of(context).primary,
-                                      GSLAppTheme.of(context).secondary
+                                      Color(0xFF4B39EF),
+                                      Color(0xFF39D2C0)
                                     ],
                                     stops: [0, 1],
                                     begin: AlignmentDirectional(0, -1),
@@ -533,25 +540,21 @@ class _HomePageState extends State<HomePage>
                                         alignment: AlignmentDirectional(0, 0),
                                         child: FaIcon(
                                           FontAwesomeIcons
-                                              .americanSignLanguageInterpreting,
+                                              .handsAslInterpreting,
                                           color: Colors.white,
                                           size: 20,
                                         ),
                                       ),
                                       Text(
                                         'Pronouns',
-                                        style: GSLAppTheme.of(context)
-                                            .titleMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
                                       ),
                                       Text(
                                         '39 Items',
-                                        style: GSLAppTheme.of(context)
-                                            .bodyMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
@@ -570,7 +573,7 @@ class _HomePageState extends State<HomePage>
                       width: 100,
                       height: 140,
                       decoration: BoxDecoration(
-                        color: GSLAppTheme.of(context).tertiary,
+                        color: Color(0xFFEE8B60),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0),
                           bottomRight: Radius.circular(0),
@@ -601,18 +604,14 @@ class _HomePageState extends State<HomePage>
                             ),
                             Text(
                               'Numbers',
-                              style: GSLAppTheme.of(context)
-                                  .titleMedium
-                                  .override(
+                              style: TextStyle(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
                                   ),
                             ),
                             Text(
                               '39 Items',
-                              style: GSLAppTheme.of(context)
-                                  .bodyMedium
-                                  .override(
+                              style: TextStyle(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
                                   ),
@@ -628,7 +627,12 @@ class _HomePageState extends State<HomePage>
                 padding: EdgeInsetsDirectional.fromSTEB(16, 12, 0, 0),
                 child: Text(
                   'Practice Tests',
-                  style: GSLAppTheme.of(context).headlineSmall,
+                  style: GoogleFonts.getFont(
+        'Outfit',
+        color:  Color(0xFF14181B),
+        fontWeight: FontWeight.w500,
+        fontSize: 24.0,
+      ),
                 ),
               ),
               Padding(
@@ -637,7 +641,7 @@ class _HomePageState extends State<HomePage>
                   width: double.infinity,
                   height: 400,
                   decoration: BoxDecoration(
-                    color: GSLAppTheme.of(context).secondaryBackground,
+                    color: Color(0xFFFFFFFF),
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 6,
@@ -660,13 +664,18 @@ class _HomePageState extends State<HomePage>
                           alignment: Alignment(0, 0),
                           child: TabBar(
                             isScrollable: true,
-                            labelColor: GSLAppTheme.of(context).primary,
+                            labelColor: Color(0xFF4B39EF),
                             unselectedLabelColor:
-                                GSLAppTheme.of(context).secondaryText,
-                            labelStyle: GSLAppTheme.of(context).bodyMedium,
+                                Color(0xFF57636C),
+                            labelStyle: GoogleFonts.getFont(
+        'Readex Pro',
+        color:  Color(0xFF14181B),
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      ),
                             unselectedLabelStyle: TextStyle(),
                             indicatorColor:
-                                GSLAppTheme.of(context).primary,
+                                Color(0xFF4B39EF),
                             indicatorWeight: 2,
                             tabs: [
                               Tab(
@@ -703,8 +712,7 @@ class _HomePageState extends State<HomePage>
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
-                                              GSLAppTheme.of(context)
-                                                  .primary,
+                                              Color(0xFF4B39EF),
                                             ),
                                           ),
                                         ),
@@ -732,14 +740,12 @@ class _HomePageState extends State<HomePage>
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                               color:
-                                                  GSLAppTheme.of(context)
-                                                      .secondaryBackground,
+                                                  Color(0xFFFFFFFF),
                                               borderRadius:
                                                   BorderRadius.circular(12),
                                               border: Border.all(
                                                 color:
-                                                    GSLAppTheme.of(context)
-                                                        .alternate,
+                                                    Color(0xFFE0E3E7),
                                                 width: 2,
                                               ),
                                             ),
@@ -754,9 +760,12 @@ class _HomePageState extends State<HomePage>
                                                   Text(
                                                     listViewCategoriesRecord
                                                         .categoryName,
-                                                    style: GSLAppTheme.of(
-                                                            context)
-                                                        .headlineSmall,
+                                                    style: GoogleFonts.getFont(
+        'Outfit',
+        color: Color(0xFF14181B),
+        fontWeight: FontWeight.w500,
+        fontSize: 24.0,
+      ),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -766,17 +775,18 @@ class _HomePageState extends State<HomePage>
                                                     child: Text(
                                                       'Now that you\'ve studied test your knowledge',
                                                       style:
-                                                          GSLAppTheme.of(
-                                                                  context)
-                                                              .labelMedium,
+                                                          GoogleFonts.getFont(
+        'Readex Pro',
+        color: Color(0xFF95A1AC),
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      ),
                                                     ),
                                                   ),
                                                   Divider(
                                                     height: 24,
                                                     thickness: 1,
-                                                    color: GSLAppTheme.of(
-                                                            context)
-                                                        .alternate,
+                                                    color: Color(0xFFE0E3E7),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -791,9 +801,12 @@ class _HomePageState extends State<HomePage>
                                                                     200, 0),
                                                         child: Text(
                                                           'Due',
-                                                          style: GSLAppTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          style: GoogleFonts.getFont(
+        'Readex Pro',
+        color: Color(0xFF14181B),
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      ),
                                                         ),
                                                       ),
                                                       InkWell(
@@ -821,9 +834,7 @@ class _HomePageState extends State<HomePage>
                                                           height: 32,
                                                           decoration:
                                                               BoxDecoration(
-                                                            color: GSLAppTheme
-                                                                    .of(context)
-                                                                .secondary,
+                                                            color: Color(0xFF39D2C0),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
@@ -834,10 +845,7 @@ class _HomePageState extends State<HomePage>
                                                                   0, 0),
                                                           child: Text(
                                                             'Go',
-                                                            style: GSLAppTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
+                                                            style: TextStyle(
                                                                   fontFamily:
                                                                       'Readex Pro',
                                                                   color: Colors
@@ -878,8 +886,7 @@ class _HomePageState extends State<HomePage>
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
-                                              GSLAppTheme.of(context)
-                                                  .primary,
+                                              Color(0xFF4B39EF),
                                             ),
                                           ),
                                         ),
@@ -906,15 +913,12 @@ class _HomePageState extends State<HomePage>
                                           child: Container(
                                             width: double.infinity,
                                             decoration: BoxDecoration(
-                                              color:
-                                                  GSLAppTheme.of(context)
-                                                      .primaryBackground,
+                                              color:Color(0xFFF1F4F8),
                                               borderRadius:
                                                   BorderRadius.circular(12),
                                               border: Border.all(
                                                 color:
-                                                    GSLAppTheme.of(context)
-                                                        .alternate,
+                                                    const Color(0xFFE0E3E7),
                                                 width: 2,
                                               ),
                                             ),
@@ -929,10 +933,7 @@ class _HomePageState extends State<HomePage>
                                                   Text(
                                                     listViewCategoriesRecord
                                                         .categoryName,
-                                                    style: GSLAppTheme.of(
-                                                            context)
-                                                        .headlineSmall
-                                                        .override(
+                                                    style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           decoration:
                                                               TextDecoration
@@ -947,10 +948,7 @@ class _HomePageState extends State<HomePage>
                                                     child: Text(
                                                       'Congratulations! You\'ve tested your knowledge',
                                                       style:
-                                                          GSLAppTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
+                                                          TextStyle(
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 decoration:
@@ -962,9 +960,7 @@ class _HomePageState extends State<HomePage>
                                                   Divider(
                                                     height: 24,
                                                     thickness: 1,
-                                                    color: GSLAppTheme.of(
-                                                            context)
-                                                        .alternate,
+                                                    color: const Color(0xFFE0E3E7),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -979,9 +975,12 @@ class _HomePageState extends State<HomePage>
                                                                     160, 0),
                                                         child: Text(
                                                           'Completed',
-                                                          style: GSLAppTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          style: GoogleFonts.getFont(
+        'Readex Pro',
+        color:Color(0xFF14181B),
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      ),
                                                         ),
                                                       ),
                                                       Container(
@@ -989,9 +988,7 @@ class _HomePageState extends State<HomePage>
                                                         height: 32,
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: GSLAppTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                                          color: Color(0xFFFFFFFF),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(32),
@@ -1001,9 +998,12 @@ class _HomePageState extends State<HomePage>
                                                                 0, 0),
                                                         child: Text(
                                                           'Complete',
-                                                          style: GSLAppTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          style: GoogleFonts.getFont(
+        'Readex Pro',
+        color: Color(0xFF14181B),
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      ),
                                                         ),
                                                       ),
                                                     ],
