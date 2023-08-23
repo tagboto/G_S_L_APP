@@ -1,5 +1,5 @@
 // Export pages
-export '/pages/loginpage/loginpage_widget.dart' show LoginPage;
+export 'pages/loginpage/login_page.dart' show LoginPage;
 export '/pages/onboarding/onboarding_widget.dart' show OnboardingPage;
 export '/pages/homepage/homepage_widget.dart' show HomePage;
 export '/pages/success_quiz/success_quiz_widget.dart' show SuccessQuiz;
