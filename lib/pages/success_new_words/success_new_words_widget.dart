@@ -23,7 +23,6 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
 
     super.dispose();
   }
