@@ -107,7 +107,7 @@ class _QuizMultipleChoicePageWidgetState
                       ),
                       Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: Color(0xFFFFFFFF),
                         elevation: 4.0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
@@ -127,8 +127,7 @@ class _QuizMultipleChoicePageWidgetState
                         children: [
                           Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: Color(0xFFFFFFFF),
                             elevation: 4.0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
@@ -150,7 +149,7 @@ class _QuizMultipleChoicePageWidgetState
                               activeColor: FlutterFlowTheme.of(context).primary,
                               checkColor: FlutterFlowTheme.of(context).info,
                               checkboxBorderColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
+                                  Color(0xFF57636C),
                               textStyle:
                                   FlutterFlowTheme.of(context).bodyMedium,
                               checkboxBorderRadius: BorderRadius.circular(4.0),
@@ -163,7 +162,7 @@ class _QuizMultipleChoicePageWidgetState
                   ),
                 ),
               ),
-              GSLButtonWidget(
+              GSLButton(
                 onPressed: () {
                   print('Button pressed ...');
                 },
@@ -174,7 +173,7 @@ class _QuizMultipleChoicePageWidgetState
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                  textStyle: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: Colors.white,
                       ),

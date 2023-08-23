@@ -266,8 +266,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                           width: 230.0,
                           height: 50.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: Color(0xFFFFFFFF),
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 4.0,
@@ -340,18 +339,14 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                         ),
                                         Text(
                                           'Alphabets',
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.white,
                                               ),
                                         ),
                                         Text(
                                           '26 Items',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.white,
                                               ),
@@ -375,7 +370,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                         height: 50.0,
                         decoration: BoxDecoration(
                           color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                              Color(0xFFFFFFFF),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
@@ -441,18 +436,14 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                       Text(
                                         'Family',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
                                       ),
                                       Text(
                                         '16 Items',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
@@ -475,7 +466,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                         height: 50.0,
                         decoration: BoxDecoration(
                           color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                              Color(0xFFFFFFFF),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
@@ -548,18 +539,14 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                       Text(
                                         'Pronouns',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
                                       ),
                                       Text(
                                         '39 Items',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
@@ -646,7 +633,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                   width: double.infinity,
                   height: 400.0,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: Color(0xFFFFFFFF),
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 6.0,
@@ -671,7 +658,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             isScrollable: true,
                             labelColor: FlutterFlowTheme.of(context).primary,
                             unselectedLabelColor:
-                                FlutterFlowTheme.of(context).secondaryText,
+                                Color(0xFF57636C),
                             labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                             unselectedLabelStyle: TextStyle(),
                             indicatorColor:
@@ -741,8 +728,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                               color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                  Color(0xFFFFFFFF),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                               border: Border.all(
@@ -847,10 +833,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             'Go',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
+                                                            style: TextStyle(
                                                                   fontFamily:
                                                                       'Readex Pro',
                                                                   color: Colors
@@ -943,10 +926,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   Text(
                                                     listViewCategoriesRecord
                                                         .categoryName,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .headlineSmall
-                                                        .override(
+                                                    style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           decoration:
                                                               TextDecoration
@@ -961,10 +941,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                     child: Text(
                                                       'Congratulations! You\'ve tested your knowledge',
                                                       style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
+                                                          TextStyle(
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 decoration:
@@ -1006,9 +983,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                         height: 32.0,
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                                          color: Color(0xFFFFFFFF),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(

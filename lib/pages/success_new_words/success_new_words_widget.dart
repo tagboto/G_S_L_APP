@@ -77,7 +77,7 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'You\'ve learnt new words',
-                  style: FlutterFlowTheme.of(context).titleSmall.override(
+                  style: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: FlutterFlowTheme.of(context).primaryBtnText,
                         fontSize: 20.0,
@@ -87,7 +87,7 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
-                child: GSLButtonWidget(
+                child: GSLButton(
                   onPressed: () async {
                     context.pushNamed(
                       'homepage',
@@ -105,7 +105,7 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBtnText,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                    textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
                           color: FlutterFlowTheme.of(context).secondary,
                         ),

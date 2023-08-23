@@ -77,7 +77,7 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Thanks for taking the quiz.',
-                  style: FlutterFlowTheme.of(context).titleSmall.override(
+                  style: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: FlutterFlowTheme.of(context).primaryBtnText,
                         fontSize: 20.0,
@@ -87,7 +87,7 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
-                child: GSLButtonWidget(
+                child: GSLButton(
                   onPressed: () async {
                     context.pushNamed(
                       'homepage',
@@ -105,7 +105,7 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBtnText,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                    textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
                           color: FlutterFlowTheme.of(context).secondary,
                         ),

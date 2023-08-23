@@ -131,7 +131,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
               automaticallyImplyLeading: true,
               title: Text(
                 GSLAppState().categoryName,
-                style: FlutterFlowTheme.of(context).titleMedium,
+                //style: FlutterFlowTheme.of(context).titleMedium,
               ),
               actions: [],
               centerTitle: true,
@@ -150,9 +150,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
                             16.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Scroll to see a list of new words',
-                          style: FlutterFlowTheme.of(context)
-                              .headlineSmall
-                              .override(
+                          style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 18.0,
                               ),
@@ -202,8 +200,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
                                     width: 350.0,
                                     height: 613.0,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: Color(0xFFFFFFFF),
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4.0,
@@ -252,9 +249,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
                                               Text(
                                                 'Word:',
                                                 style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
+                                                    TextStyle(
                                                           fontFamily:
                                                               'Readex Pro',
                                                           fontSize: 39.0,
@@ -268,10 +263,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
                                                   listViewAlphabetsRecord
                                                       .signName,
                                                   textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelLarge
-                                                      .override(
+                                                  style: TextStyle(
                                                         fontFamily:
                                                             'Readex Pro',
                                                         fontSize: 30.0,
@@ -296,7 +288,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
                     ],
                   ),
                 ),
-                GSLButtonWidget(
+                 GSLButton(
                   onPressed: () async {
                     context.pushNamed('successNewWords');
                   },
@@ -308,7 +300,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                    textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,
                         ),

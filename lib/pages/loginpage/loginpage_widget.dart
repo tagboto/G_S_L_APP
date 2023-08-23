@@ -153,9 +153,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                           decoration: InputDecoration(
                                             labelText: 'Email Address',
                                             labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
                                                       fontSize: 14.0,
@@ -163,9 +161,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                           FontWeight.normal,
                                                     ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
                                                       fontSize: 14.0,
@@ -211,9 +207,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 24.0, 20.0, 24.0),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleSmall
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 color: Color(0xFF0F1113),
                                                 fontSize: 16.0,
@@ -236,9 +230,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                           decoration: InputDecoration(
                                             labelText: 'Password',
                                             labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
                                                       fontSize: 14.0,
@@ -246,9 +238,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                           FontWeight.normal,
                                                     ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
                                                       fontSize: 14.0,
@@ -312,9 +302,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                               ),
                                             ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleSmall
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 color: Color(0xFF0F1113),
                                                 fontSize: 16.0,
@@ -328,7 +316,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 24.0, 0.0, 0.0),
-                                        child: GSLButtonWidget(
+                                        child: GSLButton(
                                           onPressed: () async {
                                             GoRouter.of(context)
                                                 .prepareAuthEvent();
@@ -356,12 +344,9 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            color: Color(0xFF14181B),
                                             textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Colors.white,
                                                       fontSize: 16.0,
@@ -379,7 +364,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
-                                        child: GSLButtonWidget(
+                                        child: GSLButton(
                                           onPressed: () {
                                             print(
                                                 'Button-ForgotPassword pressed ...');
@@ -393,14 +378,9 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: Color(0x0039D2C0),
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .titleMedium
-                                                .override(
+                                            textStyle: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
+                                                  color: Color(0xFF14181B),
                                                   fontSize: 18.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -427,13 +407,9 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                               child: Text(
                                                 'Or use a social account to login',
                                                 style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
+                                                    TextStyle(
                                                           fontFamily: 'Outfit',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
+                                                          color: Color(0xFF57636C),
                                                           fontSize: 16.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -600,9 +576,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                           decoration: InputDecoration(
                                             labelText: 'Email Address',
                                             labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Outfit',
                                                       color: Color(0xFF57636C),
                                                       fontSize: 16.0,
@@ -610,9 +584,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                           FontWeight.normal,
                                                     ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
                                                       fontSize: 14.0,
@@ -658,9 +630,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 24.0, 20.0, 24.0),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Lexend Deca',
                                                 color: Color(0xFF14181B),
                                                 fontSize: 14.0,
@@ -682,9 +652,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                           decoration: InputDecoration(
                                             labelText: 'Password',
                                             labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Outfit',
                                                       color: Color(0xFF57636C),
                                                       fontSize: 16.0,
@@ -692,9 +660,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                           FontWeight.normal,
                                                     ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
                                                       fontSize: 14.0,
@@ -757,9 +723,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                               ),
                                             ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Lexend Deca',
                                                 color: Color(0xFF14181B),
                                                 fontSize: 14.0,
@@ -781,9 +745,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                           decoration: InputDecoration(
                                             labelText: 'Confirm Password',
                                             labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Outfit',
                                                       color: Color(0xFF57636C),
                                                       fontSize: 16.0,
@@ -791,9 +753,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                           FontWeight.normal,
                                                     ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
                                                       fontSize: 14.0,
@@ -857,9 +817,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                               ),
                                             ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
+                                          style: TextStyle(
                                                 fontFamily: 'Lexend Deca',
                                                 color: Color(0xFF14181B),
                                                 fontSize: 14.0,
@@ -873,7 +831,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 24.0, 0.0, 0.0),
-                                        child: GSLButtonWidget(
+                                        child: GSLButton(
                                           onPressed: () async {
                                             GoRouter.of(context)
                                                 .prepareAuthEvent();
@@ -914,12 +872,9 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            color: Color(0xFF14181B),
                                             textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
+                                                TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Colors.white,
                                                       fontSize: 16.0,
@@ -950,15 +905,10 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                                                 child: Text(
                                                   'Or use a social account to create account',
                                                   textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
+                                                  style: TextStyle(
                                                         fontFamily: 'Outfit',
                                                         color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
+                                                            Color(0xFF57636C),
                                                         fontSize: 16.0,
                                                         fontWeight:
                                                             FontWeight.normal,

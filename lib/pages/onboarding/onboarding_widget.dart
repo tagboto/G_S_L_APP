@@ -1,4 +1,3 @@
-import '../../gsl_flow/gsl_flow_theme.dart';
 import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
@@ -85,9 +84,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       ' Curious',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Urbanist',
                                             color: Color(0xFF101213),
                                             fontSize: 32.0,
@@ -100,9 +97,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         12.0, 4.0, 12.0, 0.0),
                                     child: Text(
                                       'Heard about Ghanaian sign  language?',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Plus Jakarta Sans',
                                             color: Color(0xFF57636C),
                                             fontSize: 16.0,
@@ -142,9 +137,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Want to Learn More',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Urbanist',
                                             color: Color(0xFF101213),
                                             fontSize: 32.0,
@@ -157,9 +150,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         12.0, 4.0, 12.0, 0.0),
                                     child: Text(
                                       'With over 800 signs and counting. Ghana\'s first sign language app is here for you!',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Plus Jakarta Sans',
                                             color: Color(0xFF57636C),
                                             fontSize: 16.0,
@@ -199,9 +190,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Start Today',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Urbanist',
                                             color: Color(0xFF101213),
                                             fontSize: 32.0,
@@ -214,9 +203,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         12.0, 4.0, 12.0, 0.0),
                                     child: Text(
                                       'Curated learning plans ready to help you meet your goals.',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Plus Jakarta Sans',
                                             color: Color(0xFF57636C),
                                             fontSize: 16.0,
@@ -276,7 +263,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                   verticalDirection: VerticalDirection.down,
                   clipBehavior: Clip.none,
                   children: [
-                    GSLButtonWidget(
+                    GSLButton(
                       onPressed: () async {
                         context.pushNamed('loginpage');
                       },
@@ -290,7 +277,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: Colors.white,
                         textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
+                            TextStyle(
                                   fontFamily: 'Plus Jakarta Sans',
                                   color: Color(0xFF101213),
                                   fontSize: 16.0,
@@ -304,7 +291,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                     ),
-                    GSLButtonWidget(
+                    GSLButton(
                       onPressed: () async {
                         context.pushNamed('loginpage');
                       },
@@ -318,7 +305,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: Color(0xFF101213),
                         textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
+                            TextStyle(
                                   fontFamily: 'Plus Jakarta Sans',
                                   color: Colors.white,
                                   fontSize: 16.0,

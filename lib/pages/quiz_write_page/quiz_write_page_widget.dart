@@ -108,8 +108,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                         children: [
                           Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: Color(0xFFFFFFFF),
                             elevation: 4.0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
@@ -170,7 +169,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                   ),
                 ),
               ),
-              GSLButtonWidget(
+              GSLButton(
                 onPressed: () {
                   print('Button pressed ...');
                 },
@@ -181,7 +180,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                  textStyle: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: Colors.white,
                       ),

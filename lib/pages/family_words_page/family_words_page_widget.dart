@@ -167,8 +167,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                                 width: 350.0,
                                 height: 613.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color:Color(0xFFFFFFFF),
                                   boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4.0,
@@ -215,9 +214,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                                         children: [
                                           Text(
                                             'Word:',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
+                                            style:TextStyle(
                                                   fontFamily: 'Readex Pro',
                                                   fontSize: 39.0,
                                                 ),
@@ -229,11 +226,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                                             child: Text(
                                               listViewFamilyRecord.signName,
                                               textAlign: TextAlign.center,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
+                                              style: TextStyle( fontFamily: 'Readex Pro',
                                                     fontSize: 30.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
@@ -255,7 +248,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                 ],
               ),
             ),
-            GSLButtonWidget(
+            GSLButton(
               onPressed: () async {
                 context.pushNamed('successNewWords');
               },
@@ -265,7 +258,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
-                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                textStyle: TextStyle(
                       fontFamily: 'Readex Pro',
                       color: Colors.white,
                     ),

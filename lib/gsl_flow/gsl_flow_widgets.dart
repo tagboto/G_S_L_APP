@@ -46,8 +46,8 @@ class GSLButtonOptions {
   final double? hoverElevation;
 }
 
-class GSLButtonWidget extends StatefulWidget {
-  const GSLButtonWidget({
+class GSLButton extends StatefulWidget {
+  const GSLButton({
     Key? key,
     required this.text,
     required this.onPressed,
@@ -65,10 +65,10 @@ class GSLButtonWidget extends StatefulWidget {
   final bool showLoadingIndicator;
 
   @override
-  State<GSLButtonWidget> createState() => _GSLButtonWidgetState();
+  State<GSLButton> createState() => _GSLButtonState();
 }
 
-class _GSLButtonWidgetState extends State<GSLButtonWidget> {
+class _GSLButtonState extends State<GSLButton> {
   bool loading = false;
 
   int get maxLines => widget.options.maxLines ?? 1;

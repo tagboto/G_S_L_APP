@@ -1,11 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '../../gsl_flow/gsl_flow_icon_button.dart';
-import '../../gsl_flow/gsl_flow_theme.dart';
-import '../../gsl_flow/gsl_flow_util.dart';
+// import '../../gsl_flow/gsl_flow_icon_button.dart';
+ import '../../gsl_flow/gsl_flow_theme.dart';
+ import '../../gsl_flow/gsl_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'userprofile_page_model.dart';
-export 'userprofile_page_model.dart';
 
 class UserprofilePageWidget extends StatefulWidget {
   const UserprofilePageWidget({Key? key}) : super(key: key);
@@ -15,19 +13,16 @@ class UserprofilePageWidget extends StatefulWidget {
 }
 
 class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
-  late UserprofilePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UserprofilePageModel());
   }
 
   @override
   void dispose() {
-    _model.dispose();
 
     super.dispose();
   }
@@ -37,21 +32,20 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
     context.watch<GSLAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryText,
+        backgroundColor: Color(0xFF57636C),
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryText,
+          backgroundColor: Color(0xFF57636C),
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
+          leading: IconButton(
+            // borderColor: Colors.transparent,
+            // borderRadius: 30.0,
+            // borderWidth: 1.0,
+            // buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).info,
+              color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
@@ -80,8 +74,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                           width: 100.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: Color(0xFFFFFFFF),
                             shape: BoxShape.circle,
                           ),
                           child: Padding(
@@ -110,12 +103,11 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                             width: 44.0,
                             height: 44.0,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: Color(0xFFFFFFFF),
                               shape: BoxShape.circle,
                               border: Border.all(
                                 color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                    Color(0xFF57636C),
                                 width: 4.0,
                               ),
                             ),
@@ -147,17 +139,17 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                 child: Text(
                   currentUserDisplayName,
                   textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  style: TextStyle(
                         fontFamily: 'Outfit',
-                        color: FlutterFlowTheme.of(context).info,
+                        color: const Color(0xFFFFFFFF),
                       ),
                 ),
               ),
               Text(
                 currentUserEmail,
-                style: FlutterFlowTheme.of(context).titleSmall.override(
+                style: TextStyle(
                       fontFamily: 'Readex Pro',
-                      color: FlutterFlowTheme.of(context).accent4,
+                      color:  Color(0xCCFFFFFF),
                     ),
               ),
               Padding(
@@ -177,14 +169,13 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                               width: 44.0,
                               height: 44.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: Color(0xFFFFFFFF),
                                 shape: BoxShape.circle,
                               ),
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Icon(
                                 Icons.work_outline,
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color: Color(0xFF14181B),
                                 size: 24.0,
                               ),
                             ),
@@ -211,15 +202,14 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                 width: 44.0,
                                 height: 44.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color: Color(0xFFFFFFFF),
                                   shape: BoxShape.circle,
                                 ),
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Icon(
                                   Icons.notifications_outlined,
                                   color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                     Color(0xFFFFFFFF),
                                   size: 24.0,
                                 ),
                               ),
@@ -244,14 +234,13 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                               width: 44.0,
                               height: 44.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: Color(0xFFFFFFFF),
                                 shape: BoxShape.circle,
                               ),
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Icon(
                                 Icons.help_outline_outlined,
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color: Color(0xFF14181B),
                                 size: 24.0,
                               ),
                             ),
@@ -272,7 +261,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                   width: double.infinity,
                   height: 400.0,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: Color(0xFFFFFFFF),
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 3.0,
@@ -320,8 +309,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                           0.0, 8.0, 16.0, 8.0),
                                       child: Icon(
                                         Icons.work_outline,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: Color(0xFF57636C),
                                         size: 24.0,
                                       ),
                                     ),
@@ -340,12 +328,9 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                     Text(
                                       'Add Number',
                                       textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            color: Color(0xFF4B39EF),
                                           ),
                                     ),
                                   ],
@@ -363,8 +348,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                           0.0, 8.0, 16.0, 8.0),
                                       child: Icon(
                                         Icons.language_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: Color(0xFF57636C),
                                         size: 24.0,
                                       ),
                                     ),
@@ -383,9 +367,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                     Text(
                                       'English (eng)',
                                       textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -406,8 +388,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                           0.0, 8.0, 16.0, 8.0),
                                       child: Icon(
                                         Icons.edit,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: Color(0xFF57636C),
                                         size: 24.0,
                                       ),
                                     ),
@@ -426,12 +407,9 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                     Text(
                                       'Edit Profile',
                                       textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
+                                      style: TextStyle(
                                             fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            color: Color(0xFF4B39EF),
                                           ),
                                     ),
                                   ],
@@ -449,8 +427,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                           0.0, 8.0, 16.0, 8.0),
                                       child: Icon(
                                         Icons.notifications_active,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: Color(0xFF57636C),
                                         size: 24.0,
                                       ),
                                     ),
@@ -468,8 +445,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                     ),
                                     Icon(
                                       Icons.chevron_right_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: Color(0xFF57636C),
                                       size: 24.0,
                                     ),
                                   ],
@@ -487,8 +463,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                           0.0, 8.0, 16.0, 8.0),
                                       child: Icon(
                                         Icons.login_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: Color(0xFF57636C),
                                         size: 24.0,
                                       ),
                                     ),
@@ -537,13 +512,10 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                       child: Text(
                                         'Log Out?',
                                         textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
+                                        style: TextStyle(
                                               fontFamily: 'Readex Pro',
                                               color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                                  Color(0xFF4B39EF),
                                             ),
                                       ),
                                     ),
