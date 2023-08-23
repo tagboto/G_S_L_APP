@@ -6,8 +6,6 @@ import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
-import 'prounoun_words_page_model.dart';
-export 'prounoun_words_page_model.dart';
 
 class ProunounWordsPageWidget extends StatefulWidget {
   const ProunounWordsPageWidget({Key? key}) : super(key: key);
@@ -19,7 +17,6 @@ class ProunounWordsPageWidget extends StatefulWidget {
 
 class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
     with TickerProviderStateMixin {
-  late ProunounWordsPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -67,7 +64,6 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProunounWordsPageModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -79,8 +75,6 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
 
   @override
   void dispose() {
-    _model.dispose();
-
     super.dispose();
   }
 
@@ -122,7 +116,6 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
                 ? prounounWordsPagePronounsRecordList.first
                 : null;
         return GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

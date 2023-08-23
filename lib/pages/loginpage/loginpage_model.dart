@@ -2,7 +2,6 @@ import '../../gsl_flow/gsl_flow_util.dart';
 import 'package:flutter/material.dart';
 
 class LoginpageModel extends FlutterFlowModel {
-  ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
   // State field(s) for TabBar widget.
@@ -47,7 +46,4 @@ class LoginpageModel extends FlutterFlowModel {
     passwordConfirmController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

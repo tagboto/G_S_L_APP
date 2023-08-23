@@ -4,8 +4,6 @@ import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'success_quiz_model.dart';
-export 'success_quiz_model.dart';
 
 class SuccessQuizWidget extends StatefulWidget {
   const SuccessQuizWidget({Key? key}) : super(key: key);
@@ -15,19 +13,16 @@ class SuccessQuizWidget extends StatefulWidget {
 }
 
 class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
-  late SuccessQuizModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SuccessQuizModel());
   }
 
   @override
   void dispose() {
-    _model.dispose();
 
     super.dispose();
   }
@@ -37,7 +32,6 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
     context.watch<GSLAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondary,

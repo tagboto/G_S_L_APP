@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'homepage_model.dart';
-export 'homepage_model.dart';
 
 class HomepageWidget extends StatefulWidget {
   const HomepageWidget({Key? key}) : super(key: key);
@@ -18,7 +16,9 @@ class HomepageWidget extends StatefulWidget {
 
 class _HomepageWidgetState extends State<HomepageWidget>
     with TickerProviderStateMixin {
-  late HomepageModel _model;
+  TabController? tabBarController;
+  int get tabBarCurrentIndex =>
+      tabBarController != null ? tabBarController!.index : 0;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -123,9 +123,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomepageModel());
 
-    _model.tabBarController = TabController(
+    tabBarController = TabController(
       vsync: this,
       length: 2,
       initialIndex: 0,
@@ -140,7 +139,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
 
   @override
   void dispose() {
-    _model.dispose();
 
     super.dispose();
   }
@@ -150,7 +148,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
     context.watch<GSLAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -672,13 +669,11 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 text: 'Completed',
                               ),
                             ],
-                            controller: _model.tabBarController,
                             onTap: (value) => setState(() {}),
                           ),
                         ),
                         Expanded(
                           child: TabBarView(
-                            controller: _model.tabBarController,
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(

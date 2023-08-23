@@ -4,8 +4,7 @@ import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'success_new_words_model.dart';
-export 'success_new_words_model.dart';
+
 
 class SuccessNewWordsWidget extends StatefulWidget {
   const SuccessNewWordsWidget({Key? key}) : super(key: key);
@@ -15,14 +14,11 @@ class SuccessNewWordsWidget extends StatefulWidget {
 }
 
 class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
-  late SuccessNewWordsModel _model;
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SuccessNewWordsModel());
   }
 
   @override
@@ -37,7 +33,6 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
     context.watch<GSLAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondary,

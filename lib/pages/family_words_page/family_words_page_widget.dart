@@ -6,8 +6,6 @@ import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
-import 'family_words_page_model.dart';
-export 'family_words_page_model.dart';
 
 class FamilyWordsPageWidget extends StatefulWidget {
   const FamilyWordsPageWidget({Key? key}) : super(key: key);
@@ -18,7 +16,6 @@ class FamilyWordsPageWidget extends StatefulWidget {
 
 class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
     with TickerProviderStateMixin {
-  late FamilyWordsPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -66,7 +63,6 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FamilyWordsPageModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -78,7 +74,6 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
 
   @override
   void dispose() {
-    _model.dispose();
 
     super.dispose();
   }
@@ -88,7 +83,6 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
     context.watch<GSLAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

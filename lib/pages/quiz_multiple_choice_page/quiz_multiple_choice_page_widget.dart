@@ -6,8 +6,6 @@ import '../../gsl_flow/gsl_flow_widgets.dart';
 import '../../gsl_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'quiz_multiple_choice_page_model.dart';
-export 'quiz_multiple_choice_page_model.dart';
 
 class QuizMultipleChoicePageWidget extends StatefulWidget {
   const QuizMultipleChoicePageWidget({Key? key}) : super(key: key);
@@ -19,20 +17,18 @@ class QuizMultipleChoicePageWidget extends StatefulWidget {
 
 class _QuizMultipleChoicePageWidgetState
     extends State<QuizMultipleChoicePageWidget> {
-  late QuizMultipleChoicePageModel _model;
+  List<String>? checkboxGroupValues;
+  FormFieldController<List<String>>? checkboxGroupValueController;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QuizMultipleChoicePageModel());
   }
 
   @override
   void dispose() {
-    _model.dispose();
-
     super.dispose();
   }
 
@@ -41,7 +37,6 @@ class _QuizMultipleChoicePageWidgetState
     context.watch<GSLAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -140,9 +135,9 @@ class _QuizMultipleChoicePageWidgetState
                                 'Option 4'
                               ],
                               onChanged: (val) => setState(
-                                  () => _model.checkboxGroupValues = val),
+                                  () => checkboxGroupValues = val),
                               controller:
-                                  _model.checkboxGroupValueController ??=
+                                  checkboxGroupValueController ??=
                                       FormFieldController<List<String>>(
                                 [],
                               ),
@@ -153,7 +148,7 @@ class _QuizMultipleChoicePageWidgetState
                               textStyle:
                                   FlutterFlowTheme.of(context).bodyMedium,
                               checkboxBorderRadius: BorderRadius.circular(4.0),
-                              initialized: _model.checkboxGroupValues != null,
+                              initialized: checkboxGroupValues != null,
                             ),
                           ),
                         ],

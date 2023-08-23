@@ -4,8 +4,8 @@ import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'quiz_write_page_model.dart';
-export 'quiz_write_page_model.dart';
+// import 'quiz_write_page_model.dart';
+// export 'quiz_write_page_model.dart';
 
 class QuizWritePageWidget extends StatefulWidget {
   const QuizWritePageWidget({Key? key}) : super(key: key);
@@ -15,21 +15,20 @@ class QuizWritePageWidget extends StatefulWidget {
 }
 
 class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
-  late QuizWritePageModel _model;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QuizWritePageModel());
+    
 
-    _model.textController ??= TextEditingController();
   }
 
   @override
-  void dispose() {
-    _model.dispose();
+  void dispose() {;
 
     super.dispose();
   }
@@ -39,7 +38,6 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
     context.watch<GSLAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -117,7 +115,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
-                                controller: _model.textController,
+                                controller: textController,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -158,7 +156,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
-                                validator: _model.textControllerValidator
+                                validator: textControllerValidator
                                     .asValidator(context),
                               ),
                             ),
