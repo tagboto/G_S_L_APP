@@ -7,14 +7,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-class HomepageWidget extends StatefulWidget {
-  const HomepageWidget({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomepageWidgetState createState() => _HomepageWidgetState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomepageWidgetState extends State<HomepageWidget>
+class _HomePageState extends State<HomePage>
     with TickerProviderStateMixin {
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -150,7 +150,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: GSLAppTheme.of(context).primaryBackground,
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -171,7 +171,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                       },
                       child: Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: GSLAppTheme.of(context).primary,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40.0),
                         ),
@@ -208,14 +208,14 @@ class _HomepageWidgetState extends State<HomepageWidget>
                         children: [
                           Text(
                             'Zoe Tagboto',
-                            style: FlutterFlowTheme.of(context).titleLarge,
+                            style: GSLAppTheme.of(context).titleLarge,
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               'Good morning Zoe!',
-                              style: FlutterFlowTheme.of(context).labelMedium,
+                              style: GSLAppTheme.of(context).labelMedium,
                             ),
                           ),
                         ],
@@ -228,14 +228,14 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Categories',
-                  style: FlutterFlowTheme.of(context).headlineSmall,
+                  style: GSLAppTheme.of(context).headlineSmall,
                 ),
               ),
               Container(
                 width: double.infinity,
                 height: 250.0,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: GSLAppTheme.of(context).primaryBackground,
                 ),
                 child: ListView(
                   padding: EdgeInsets.zero,
@@ -293,8 +293,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
-                                        FlutterFlowTheme.of(context).primary,
-                                        FlutterFlowTheme.of(context).secondary
+                                        GSLAppTheme.of(context).primary,
+                                        GSLAppTheme.of(context).secondary
                                       ],
                                       stops: [0.0, 1.0],
                                       begin: AlignmentDirectional(0.0, -1.0),
@@ -397,7 +397,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 width: double.infinity,
                                 height: 140.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  color: GSLAppTheme.of(context).tertiary,
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
                                     bottomRight: Radius.circular(0.0),
@@ -493,8 +493,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).secondary
+                                      GSLAppTheme.of(context).primary,
+                                      GSLAppTheme.of(context).secondary
                                     ],
                                     stops: [0.0, 1.0],
                                     begin: AlignmentDirectional(0.0, -1.0),
@@ -562,7 +562,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                       width: 100.0,
                       height: 140.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).tertiary,
+                        color: GSLAppTheme.of(context).tertiary,
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(0.0),
@@ -594,7 +594,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             ),
                             Text(
                               'Numbers',
-                              style: FlutterFlowTheme.of(context)
+                              style: GSLAppTheme.of(context)
                                   .titleMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
@@ -603,7 +603,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             ),
                             Text(
                               '39 Items',
-                              style: FlutterFlowTheme.of(context)
+                              style: GSLAppTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
@@ -621,7 +621,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Practice Tests',
-                  style: FlutterFlowTheme.of(context).headlineSmall,
+                  style: GSLAppTheme.of(context).headlineSmall,
                 ),
               ),
               Padding(
@@ -653,13 +653,13 @@ class _HomepageWidgetState extends State<HomepageWidget>
                           alignment: Alignment(0.0, 0),
                           child: TabBar(
                             isScrollable: true,
-                            labelColor: FlutterFlowTheme.of(context).primary,
+                            labelColor: GSLAppTheme.of(context).primary,
                             unselectedLabelColor:
                                 Color(0xFF57636C),
-                            labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                            labelStyle: GSLAppTheme.of(context).bodyMedium,
                             unselectedLabelStyle: TextStyle(),
                             indicatorColor:
-                                FlutterFlowTheme.of(context).primary,
+                                GSLAppTheme.of(context).primary,
                             indicatorWeight: 2.0,
                             tabs: [
                               Tab(
@@ -694,7 +694,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
+                                              GSLAppTheme.of(context)
                                                   .primary,
                                             ),
                                           ),
@@ -728,7 +728,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   BorderRadius.circular(12.0),
                                               border: Border.all(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
+                                                    GSLAppTheme.of(context)
                                                         .alternate,
                                                 width: 2.0,
                                               ),
@@ -745,7 +745,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   Text(
                                                     listViewCategoriesRecord
                                                         .categoryName,
-                                                    style: FlutterFlowTheme.of(
+                                                    style: GSLAppTheme.of(
                                                             context)
                                                         .headlineSmall,
                                                   ),
@@ -757,7 +757,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                     child: Text(
                                                       'Now that you\'ve studied test your knowledge',
                                                       style:
-                                                          FlutterFlowTheme.of(
+                                                          GSLAppTheme.of(
                                                                   context)
                                                               .labelMedium,
                                                     ),
@@ -765,7 +765,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   Divider(
                                                     height: 24.0,
                                                     thickness: 1.0,
-                                                    color: FlutterFlowTheme.of(
+                                                    color: GSLAppTheme.of(
                                                             context)
                                                         .alternate,
                                                   ),
@@ -785,7 +785,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                     0.0),
                                                         child: Text(
                                                           'Due',
-                                                          style: FlutterFlowTheme
+                                                          style: GSLAppTheme
                                                                   .of(context)
                                                               .bodyMedium,
                                                         ),
@@ -815,7 +815,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                           height: 32.0,
                                                           decoration:
                                                               BoxDecoration(
-                                                            color: FlutterFlowTheme
+                                                            color: GSLAppTheme
                                                                     .of(context)
                                                                 .secondary,
                                                             borderRadius:
@@ -869,7 +869,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
+                                              GSLAppTheme.of(context)
                                                   .primary,
                                             ),
                                           ),
@@ -898,13 +898,13 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                               color:
-                                                  FlutterFlowTheme.of(context)
+                                                  GSLAppTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                               border: Border.all(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
+                                                    GSLAppTheme.of(context)
                                                         .alternate,
                                                 width: 2.0,
                                               ),
@@ -948,7 +948,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   Divider(
                                                     height: 24.0,
                                                     thickness: 1.0,
-                                                    color: FlutterFlowTheme.of(
+                                                    color: GSLAppTheme.of(
                                                             context)
                                                         .alternate,
                                                   ),
@@ -968,7 +968,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                     0.0),
                                                         child: Text(
                                                           'Completed',
-                                                          style: FlutterFlowTheme
+                                                          style: GSLAppTheme
                                                                   .of(context)
                                                               .bodyMedium,
                                                         ),
@@ -989,7 +989,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           'Complete',
-                                                          style: FlutterFlowTheme
+                                                          style: GSLAppTheme
                                                                   .of(context)
                                                               .bodyMedium,
                                                         ),

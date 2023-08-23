@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 
-class FamilyWordsPageWidget extends StatefulWidget {
-  const FamilyWordsPageWidget({Key? key}) : super(key: key);
+class FamilyWordsPage extends StatefulWidget {
+  const FamilyWordsPage({Key? key}) : super(key: key);
 
   @override
-  _FamilyWordsPageWidgetState createState() => _FamilyWordsPageWidgetState();
+  _FamilyWordsPageState createState() => _FamilyWordsPageState();
 }
 
-class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
+class _FamilyWordsPageState extends State<FamilyWordsPage>
     with TickerProviderStateMixin {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -85,13 +85,13 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: GSLAppTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: GSLAppTheme.of(context).primary,
           automaticallyImplyLeading: true,
           title: Text(
             GSLAppState().categoryName,
-            style: FlutterFlowTheme.of(context).titleMedium,
+            style: GSLAppTheme.of(context).titleMedium,
           ),
           actions: [],
           centerTitle: true,
@@ -111,7 +111,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                     child: Text(
                       'Scroll to see a list of new words',
                       style:
-                          FlutterFlowTheme.of(context).headlineSmall.override(
+                          GSLAppTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Outfit',
                                 fontSize: 18.0,
                               ),
@@ -121,7 +121,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                     width: double.infinity,
                     height: 496.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
+                      color: GSLAppTheme.of(context).primaryBackground,
                     ),
                     child: StreamBuilder<List<FamilyRecord>>(
                       stream: queryFamilyRecord(
@@ -137,7 +137,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                               height: 50.0,
                               child: CircularProgressIndicator(
                                 valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
+                                  GSLAppTheme.of(context).primary,
                                 ),
                               ),
                             ),
@@ -251,7 +251,7 @@ class _FamilyWordsPageWidgetState extends State<FamilyWordsPageWidget>
                 height: 40.0,
                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).primary,
+                color: GSLAppTheme.of(context).primary,
                 textStyle: TextStyle(
                       fontFamily: 'Readex Pro',
                       color: Colors.white,

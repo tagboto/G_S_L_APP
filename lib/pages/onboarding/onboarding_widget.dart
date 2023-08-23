@@ -5,14 +5,14 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart'
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class OnboardingWidget extends StatefulWidget {
-  const OnboardingWidget({Key? key}) : super(key: key);
+class OnboardingPage extends StatefulWidget {
+  const OnboardingPage({Key? key}) : super(key: key);
 
   @override
-  _OnboardingWidgetState createState() => _OnboardingWidgetState();
+  _OnboardingPageState createState() => _OnboardingPageState();
 }
 
-class _OnboardingWidgetState extends State<OnboardingWidget> {
+class _OnboardingPageState extends State<OnboardingPage> {
   PageController? pageViewController;
   int get pageViewCurrentIndex => pageViewController != null &&
           pageViewController!.hasClients &&

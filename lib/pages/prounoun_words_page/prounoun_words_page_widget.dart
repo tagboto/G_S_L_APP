@@ -7,15 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 
-class ProunounWordsPageWidget extends StatefulWidget {
-  const ProunounWordsPageWidget({Key? key}) : super(key: key);
+class ProunounWordsPage extends StatefulWidget {
+  const ProunounWordsPage({Key? key}) : super(key: key);
 
   @override
-  _ProunounWordsPageWidgetState createState() =>
-      _ProunounWordsPageWidgetState();
+  _ProunounWordsPageState createState() =>
+      _ProunounWordsPageState();
 }
 
-class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
+class _ProunounWordsPageState extends State<ProunounWordsPage>
     with TickerProviderStateMixin {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -91,14 +91,14 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: GSLAppTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    FlutterFlowTheme.of(context).primary,
+                    GSLAppTheme.of(context).primary,
                   ),
                 ),
               ),
@@ -118,13 +118,13 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
         return GestureDetector(
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: GSLAppTheme.of(context).primaryBackground,
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
+              backgroundColor: GSLAppTheme.of(context).primary,
               automaticallyImplyLeading: true,
               title: Text(
                 GSLAppState().categoryName,
-                style: FlutterFlowTheme.of(context).titleMedium,
+                style: GSLAppTheme.of(context).titleMedium,
               ),
               actions: [],
               centerTitle: true,
@@ -153,7 +153,7 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
                         width: double.infinity,
                         height: 496.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          color: GSLAppTheme.of(context).primaryBackground,
                         ),
                         child: StreamBuilder<List<PronounsRecord>>(
                           stream: queryPronounsRecord(
@@ -169,7 +169,7 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
                                   height: 50.0,
                                   child: CircularProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
+                                      GSLAppTheme.of(context).primary,
                                     ),
                                   ),
                                 ),
@@ -291,7 +291,7 @@ class _ProunounWordsPageWidgetState extends State<ProunounWordsPageWidget>
                         EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: GSLAppTheme.of(context).primary,
                     textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,

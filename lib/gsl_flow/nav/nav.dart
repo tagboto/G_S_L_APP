@@ -69,73 +69,73 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomepageWidget() : OnboardingWidget(),
+          appStateNotifier.loggedIn ? HomePage() : OnboardingPage(),
       routes: [
         GSLRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomepageWidget() : OnboardingWidget(),
+              appStateNotifier.loggedIn ? HomePage() : OnboardingPage(),
         ),
         GSLRoute(
           name: 'loginpage',
           path: '/loginpage',
-          builder: (context, params) => LoginpageWidget(),
+          builder: (context, params) => LoginPage(),
         ),
         GSLRoute(
           name: 'onboarding',
           path: '/onboarding',
-          builder: (context, params) => OnboardingWidget(),
+          builder: (context, params) => OnboardingPage(),
         ),
         GSLRoute(
           name: 'homepage',
           path: '/homepage',
-          builder: (context, params) => HomepageWidget(),
+          builder: (context, params) => HomePage(),
         ),
         GSLRoute(
           name: 'successQuiz',
           path: '/successQuiz',
-          builder: (context, params) => SuccessQuizWidget(),
+          builder: (context, params) => SuccessQuiz(),
         ),
         GSLRoute(
           name: 'userprofilePage',
           path: '/userprofilePage',
-          builder: (context, params) => UserprofilePageWidget(),
+          builder: (context, params) => UserprofilePage(),
         ),
         GSLRoute(
           name: 'alphabetWordsPage',
           path: '/alphabetWordsPage',
-          builder: (context, params) => AlphabetWordsPageWidget(),
+          builder: (context, params) => AlphabetWordsPage(),
         ),
         GSLRoute(
           name: 'successNewWords',
           path: '/successNewWords',
-          builder: (context, params) => SuccessNewWordsWidget(),
+          builder: (context, params) => SuccessNewWords(),
         ),
         GSLRoute(
           name: 'quizWritePage',
           path: '/quizWritePage',
-          builder: (context, params) => QuizWritePageWidget(),
+          builder: (context, params) => QuizWritePage(),
         ),
         GSLRoute(
           name: 'quizMultipleChoicePage',
           path: '/quizMultipleChoicePage',
-          builder: (context, params) => QuizMultipleChoicePageWidget(),
+          builder: (context, params) => QuizMultipleChoicePage(),
         ),
         GSLRoute(
           name: 'familyWordsPage',
           path: '/familyWordsPage',
-          builder: (context, params) => FamilyWordsPageWidget(),
+          builder: (context, params) => FamilyWordsPage(),
         ),
         GSLRoute(
           name: 'prounounWordsPage',
           path: '/prounounWordsPage',
-          builder: (context, params) => ProunounWordsPageWidget(),
+          builder: (context, params) => ProunounWordsPage(),
         ),
         GSLRoute(
           name: 'numberWordsPage',
           path: '/numberWordsPage',
-          builder: (context, params) => NumberWordsPageWidget(),
+          builder: (context, params) => NumberWordsPage(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -321,7 +321,7 @@ class GSLRoute {
                     height: 50.0,
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
+                        GSLAppTheme.of(context).primary,
                       ),
                     ),
                   ),

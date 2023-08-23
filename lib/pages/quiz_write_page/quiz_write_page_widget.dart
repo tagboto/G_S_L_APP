@@ -7,14 +7,14 @@ import 'package:provider/provider.dart';
 // import 'quiz_write_page_model.dart';
 // export 'quiz_write_page_model.dart';
 
-class QuizWritePageWidget extends StatefulWidget {
-  const QuizWritePageWidget({Key? key}) : super(key: key);
+class QuizWritePage extends StatefulWidget {
+  const QuizWritePage({Key? key}) : super(key: key);
 
   @override
-  _QuizWritePageWidgetState createState() => _QuizWritePageWidgetState();
+  _QuizWritePageState createState() => _QuizWritePageState();
 }
 
-class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
+class _QuizWritePageState extends State<QuizWritePage> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
 
@@ -40,9 +40,9 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: GSLAppTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: GSLAppTheme.of(context).primary,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -60,7 +60,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
           ),
           title: Text(
             'Learn the [      ]',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
+            style: GSLAppTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   color: Colors.white,
                   fontSize: 22.0,
@@ -89,7 +89,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                         child: Text(
                           'Write down the corresponding word in the box below',
-                          style: FlutterFlowTheme.of(context).headlineLarge,
+                          style: GSLAppTheme.of(context).headlineLarge,
                         ),
                       ),
                       ClipRRect(
@@ -121,12 +121,12 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                                 decoration: InputDecoration(
                                   labelText: 'Write your answer here',
                                   labelStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                      GSLAppTheme.of(context).labelMedium,
                                   hintStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                      GSLAppTheme.of(context).labelMedium,
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
+                                      color: GSLAppTheme.of(context)
                                           .alternate,
                                       width: 2.0,
                                     ),
@@ -135,27 +135,27 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color:
-                                          FlutterFlowTheme.of(context).primary,
+                                          GSLAppTheme.of(context).primary,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
+                                      color: GSLAppTheme.of(context).error,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
+                                      color: GSLAppTheme.of(context).error,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: GSLAppTheme.of(context).bodyMedium,
                                 validator: textControllerValidator
                                     .asValidator(context),
                               ),
@@ -177,7 +177,7 @@ class _QuizWritePageWidgetState extends State<QuizWritePageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
+                  color: GSLAppTheme.of(context).primary,
                   textStyle: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: Colors.white,

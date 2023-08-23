@@ -9,14 +9,14 @@ import 'package:provider/provider.dart';
 import 'loginpage_model.dart';
 export 'loginpage_model.dart';
 
-class LoginpageWidget extends StatefulWidget {
-  const LoginpageWidget({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  _LoginpageWidgetState createState() => _LoginpageWidgetState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginpageWidgetState extends State<LoginpageWidget>
+class _LoginPageState extends State<LoginPage>
     with TickerProviderStateMixin {
   late LoginpageModel _model;
 
@@ -71,7 +71,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
             width: 100.0,
             height: 100.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primaryBackground,
+              color: GSLAppTheme.of(context).primaryBackground,
             ),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
@@ -80,7 +80,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                 children: [
                   Text(
                     'GSL APP',
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
+                    style: GSLAppTheme.of(context).titleLarge.override(
                           fontFamily: 'Outfit',
                           fontSize: 35.0,
                         ),
@@ -109,7 +109,7 @@ class _LoginpageWidgetState extends State<LoginpageWidget>
                           child: FlutterFlowButtonTabBar(
                             useToggleButtonStyle: false,
                             isScrollable: true,
-                            labelStyle: FlutterFlowTheme.of(context)
+                            labelStyle: GSLAppTheme.of(context)
                                 .titleLarge
                                 .override(
                                   fontFamily: 'Outfit',

@@ -7,16 +7,16 @@ import '../../gsl_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class QuizMultipleChoicePageWidget extends StatefulWidget {
-  const QuizMultipleChoicePageWidget({Key? key}) : super(key: key);
+class QuizMultipleChoicePage extends StatefulWidget {
+  const QuizMultipleChoicePage({Key? key}) : super(key: key);
 
   @override
-  _QuizMultipleChoicePageWidgetState createState() =>
-      _QuizMultipleChoicePageWidgetState();
+  _QuizMultipleChoicePageState createState() =>
+      _QuizMultipleChoicePageState();
 }
 
-class _QuizMultipleChoicePageWidgetState
-    extends State<QuizMultipleChoicePageWidget> {
+class _QuizMultipleChoicePageState
+    extends State<QuizMultipleChoicePage> {
   List<String>? checkboxGroupValues;
   FormFieldController<List<String>>? checkboxGroupValueController;
 
@@ -39,9 +39,9 @@ class _QuizMultipleChoicePageWidgetState
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: GSLAppTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: GSLAppTheme.of(context).primary,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -62,7 +62,7 @@ class _QuizMultipleChoicePageWidgetState
             children: [
               Text(
                 'Test your knowledge of the',
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                style: GSLAppTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
                       color: Colors.white,
                       fontSize: 22.0,
@@ -70,7 +70,7 @@ class _QuizMultipleChoicePageWidgetState
               ),
               Text(
                 GSLAppState().categoryName,
-                style: FlutterFlowTheme.of(context).titleMedium,
+                style: GSLAppTheme.of(context).titleMedium,
               ),
             ],
           ),
@@ -97,7 +97,7 @@ class _QuizMultipleChoicePageWidgetState
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                         child: Text(
                           'What is this word?',
-                          style: FlutterFlowTheme.of(context).headlineLarge,
+                          style: GSLAppTheme.of(context).headlineLarge,
                         ),
                       ),
                       Card(
@@ -141,12 +141,12 @@ class _QuizMultipleChoicePageWidgetState
                                       FormFieldController<List<String>>(
                                 [],
                               ),
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: FlutterFlowTheme.of(context).info,
+                              activeColor: GSLAppTheme.of(context).primary,
+                              checkColor: GSLAppTheme.of(context).info,
                               checkboxBorderColor:
                                   Color(0xFF57636C),
                               textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
+                                  GSLAppTheme.of(context).bodyMedium,
                               checkboxBorderRadius: BorderRadius.circular(4.0),
                               initialized: checkboxGroupValues != null,
                             ),
@@ -167,7 +167,7 @@ class _QuizMultipleChoicePageWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
+                  color: GSLAppTheme.of(context).primary,
                   textStyle: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: Colors.white,

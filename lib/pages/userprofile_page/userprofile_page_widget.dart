@@ -5,14 +5,14 @@ import '/auth/firebase_auth/auth_util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class UserprofilePageWidget extends StatefulWidget {
-  const UserprofilePageWidget({Key? key}) : super(key: key);
+class UserprofilePage extends StatefulWidget {
+  const UserprofilePage({Key? key}) : super(key: key);
 
   @override
-  _UserprofilePageWidgetState createState() => _UserprofilePageWidgetState();
+  _UserprofilePageState createState() => _UserprofilePageState();
 }
 
-class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
+class _UserprofilePageState extends State<UserprofilePage> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -183,7 +183,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                           Text(
                             'Learn and Study',
                             textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context).titleSmall,
+                            style: GSLAppTheme.of(context).titleSmall,
                           ),
                         ],
                       ),
@@ -217,7 +217,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                             Text(
                               'Search New Words',
                               textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context).titleSmall,
+                              style: GSLAppTheme.of(context).titleSmall,
                             ),
                           ],
                         ),
@@ -248,7 +248,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                           Text(
                             'Help Center',
                             textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context).titleSmall,
+                            style: GSLAppTheme.of(context).titleSmall,
                           ),
                         ],
                       ),
@@ -293,7 +293,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Text(
                                   'Settings',
-                                  style: FlutterFlowTheme.of(context)
+                                  style: GSLAppTheme.of(context)
                                       .headlineSmall,
                                 ),
                               ),
@@ -320,7 +320,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                         child: Text(
                                           'Phone Number',
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
+                                          style: GSLAppTheme.of(context)
                                               .bodyMedium,
                                         ),
                                       ),
@@ -359,7 +359,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                         child: Text(
                                           'Language',
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
+                                          style: GSLAppTheme.of(context)
                                               .bodyMedium,
                                         ),
                                       ),
@@ -369,7 +369,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                             fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
+                                            color: GSLAppTheme.of(context)
                                                 .primary,
                                           ),
                                     ),
@@ -399,7 +399,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                         child: Text(
                                           'Profile Settings',
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
+                                          style: GSLAppTheme.of(context)
                                               .bodyMedium,
                                         ),
                                       ),
@@ -438,7 +438,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                         child: Text(
                                           'Notification Settings',
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
+                                          style: GSLAppTheme.of(context)
                                               .bodyMedium,
                                         ),
                                       ),
@@ -489,7 +489,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                           child: Text(
                                             'Log out of account',
                                             textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
+                                            style: GSLAppTheme.of(context)
                                                 .bodyMedium,
                                           ),
                                         ),

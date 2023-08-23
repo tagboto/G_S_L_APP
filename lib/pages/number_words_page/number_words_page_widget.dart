@@ -8,14 +8,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 
 
-class NumberWordsPageWidget extends StatefulWidget {
-  const NumberWordsPageWidget({Key? key}) : super(key: key);
+class NumberWordsPage extends StatefulWidget {
+  const NumberWordsPage({Key? key}) : super(key: key);
 
   @override
-  _NumberWordsPageWidgetState createState() => _NumberWordsPageWidgetState();
+  _NumberWordsPageState createState() => _NumberWordsPageState();
 }
 
-class _NumberWordsPageWidgetState extends State<NumberWordsPageWidget>
+class _NumberWordsPageState extends State<NumberWordsPage>
     with TickerProviderStateMixin {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -92,14 +92,14 @@ class _NumberWordsPageWidgetState extends State<NumberWordsPageWidget>
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: GSLAppTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    FlutterFlowTheme.of(context).primary,
+                    GSLAppTheme.of(context).primary,
                   ),
                 ),
               ),
@@ -118,13 +118,13 @@ class _NumberWordsPageWidgetState extends State<NumberWordsPageWidget>
         return GestureDetector(
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: GSLAppTheme.of(context).primaryBackground,
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
+              backgroundColor: GSLAppTheme.of(context).primary,
               automaticallyImplyLeading: true,
               title: Text(
                 GSLAppState().categoryName,
-                style: FlutterFlowTheme.of(context).titleMedium,
+                style: GSLAppTheme.of(context).titleMedium,
               ),
               actions: [],
               centerTitle: true,
@@ -153,7 +153,7 @@ class _NumberWordsPageWidgetState extends State<NumberWordsPageWidget>
                         width: double.infinity,
                         height: 496.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          color: GSLAppTheme.of(context).primaryBackground,
                         ),
                         child: StreamBuilder<List<NumbersRecord>>(
                           stream: queryNumbersRecord(
@@ -169,7 +169,7 @@ class _NumberWordsPageWidgetState extends State<NumberWordsPageWidget>
                                   height: 50.0,
                                   child: CircularProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
+                                      GSLAppTheme.of(context).primary,
                                     ),
                                   ),
                                 ),
@@ -293,7 +293,7 @@ class _NumberWordsPageWidgetState extends State<NumberWordsPageWidget>
                         EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: GSLAppTheme.of(context).primary,
                     textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,

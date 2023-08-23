@@ -15,7 +15,7 @@ void main() async {
   usePathUrlStrategy();
   await initFirebase();
 
-  await FlutterFlowTheme.initialize();
+  await GSLAppTheme.initialize();
 
   final appState = GSLAppState(); // Initialize GSLAppState
   await appState.initializePersistedState();
@@ -37,7 +37,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = GSLAppTheme.themeMode;
 
   late Stream<BaseAuthUser> userStream;
 
@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
 
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
+        GSLAppTheme.saveThemeMode(mode);
       });
 
   @override

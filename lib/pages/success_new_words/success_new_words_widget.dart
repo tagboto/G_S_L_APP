@@ -6,14 +6,14 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 
-class SuccessNewWordsWidget extends StatefulWidget {
-  const SuccessNewWordsWidget({Key? key}) : super(key: key);
+class SuccessNewWords extends StatefulWidget {
+  const SuccessNewWords({Key? key}) : super(key: key);
 
   @override
-  _SuccessNewWordsWidgetState createState() => _SuccessNewWordsWidgetState();
+  _SuccessNewWordsState createState() => _SuccessNewWordsState();
 }
 
-class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
+class _SuccessNewWordsState extends State<SuccessNewWords> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -34,7 +34,7 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondary,
+        backgroundColor: GSLAppTheme.of(context).secondary,
         body: SafeArea(
           top: true,
           child: Column(
@@ -61,9 +61,9 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
               ),
               Text(
                 'Congrats!',
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                style: GSLAppTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
-                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                      color: GSLAppTheme.of(context).primaryBtnText,
                       fontSize: 32.0,
                     ),
               ),
@@ -73,7 +73,7 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
                   'You\'ve learnt new words',
                   style: TextStyle(
                         fontFamily: 'Readex Pro',
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        color: GSLAppTheme.of(context).primaryBtnText,
                         fontSize: 20.0,
                         fontWeight: FontWeight.w300,
                       ),
@@ -98,10 +98,10 @@ class _SuccessNewWordsWidgetState extends State<SuccessNewWordsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryBtnText,
+                    color: GSLAppTheme.of(context).primaryBtnText,
                     textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
-                          color: FlutterFlowTheme.of(context).secondary,
+                          color: GSLAppTheme.of(context).secondary,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(

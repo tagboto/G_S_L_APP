@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-class SuccessQuizWidget extends StatefulWidget {
-  const SuccessQuizWidget({Key? key}) : super(key: key);
+class SuccessQuiz extends StatefulWidget {
+  const SuccessQuiz({Key? key}) : super(key: key);
 
   @override
-  _SuccessQuizWidgetState createState() => _SuccessQuizWidgetState();
+  _SuccessQuizState createState() => _SuccessQuizState();
 }
 
-class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
+class _SuccessQuizState extends State<SuccessQuiz> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -34,7 +34,7 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondary,
+        backgroundColor: GSLAppTheme.of(context).secondary,
         body: SafeArea(
           top: true,
           child: Column(
@@ -61,9 +61,9 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
               ),
               Text(
                 'Congrats!',
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                style: GSLAppTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
-                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                      color: GSLAppTheme.of(context).primaryBtnText,
                       fontSize: 32.0,
                     ),
               ),
@@ -73,7 +73,7 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
                   'Thanks for taking the quiz.',
                   style: TextStyle(
                         fontFamily: 'Readex Pro',
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        color: GSLAppTheme.of(context).primaryBtnText,
                         fontSize: 20.0,
                         fontWeight: FontWeight.w300,
                       ),
@@ -98,10 +98,10 @@ class _SuccessQuizWidgetState extends State<SuccessQuizWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryBtnText,
+                    color: GSLAppTheme.of(context).primaryBtnText,
                     textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
-                          color: FlutterFlowTheme.of(context).secondary,
+                          color: GSLAppTheme.of(context).secondary,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
