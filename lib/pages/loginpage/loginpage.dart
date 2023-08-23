@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '../../gsl_flow/gsl_flow_button_tabbar.dart';
-import '../../gsl_flow/gsl_flow_theme.dart';
 import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -56,8 +55,8 @@ class _LoginPageState extends State<LoginPage>
         key: scaffoldKey,
         backgroundColor: Color(0xFF14181B),
         body: Container(
-          width: MediaQuery.sizeOf(context).width * 1.0,
-          height: MediaQuery.sizeOf(context).height * 1.0,
+          width: MediaQuery.sizeOf(context).width,
+          height: MediaQuery.sizeOf(context).height * 1,
           decoration: BoxDecoration(
             color: Color(0xFF14181B),
             image: DecorationImage(
@@ -68,34 +67,33 @@ class _LoginPageState extends State<LoginPage>
             ),
           ),
           child: Container(
-            width: 100.0,
-            height: 100.0,
+            width: 100,
+            height: 100,
             decoration: BoxDecoration(
-              color: GSLAppTheme.of(context).primaryBackground,
+              color: Color(0xFFF1F4F8),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
                     'GSL APP',
-                    style: GSLAppTheme.of(context).titleLarge.override(
+                    style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 35.0,
+                          fontSize: 35,
                         ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 20.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 20),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
                           'assets/images/sign-language.png',
-                          width: 160.0,
-                          height: 105.0,
+                          width: 160,
+                          height: 105,
                           fit: BoxFit.cover,
                         ),
                       ],
@@ -105,21 +103,19 @@ class _LoginPageState extends State<LoginPage>
                     child: Column(
                       children: [
                         Align(
-                          alignment: Alignment(0.0, 0),
+                          alignment: Alignment(0, 0),
                           child: FlutterFlowButtonTabBar(
                             useToggleButtonStyle: false,
                             isScrollable: true,
-                            labelStyle: GSLAppTheme.of(context)
-                                .titleLarge
-                                .override(
+                            labelStyle: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 18.0,
+                                  fontSize: 18,
                                 ),
                             unselectedLabelStyle: TextStyle(),
                             labelColor: Colors.black,
-                            borderWidth: 0.0,
-                            borderRadius: 0.0,
-                            elevation: 0.0,
+                            borderWidth: 0,
+                            borderRadius: 0,
+                            elevation: 0,
                             tabs: [
                               Tab(
                                 text: 'Sign In',
@@ -138,14 +134,14 @@ class _LoginPageState extends State<LoginPage>
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    44.0, 0.0, 44.0, 0.0),
+                                    44, 0, 44, 0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                            0, 20, 0, 0),
                                         child: TextFormField(
                                           controller: _model
                                               .emailAddressLoginController,
@@ -156,7 +152,7 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
+                                                      fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -164,53 +160,53 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
+                                                      fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 24.0, 20.0, 24.0),
+                                                    20, 24, 20, 24),
                                           ),
                                           style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 color: Color(0xFF0F1113),
-                                                fontSize: 16.0,
+                                                fontSize: 16,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           maxLines: null,
@@ -221,7 +217,7 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 0.0),
+                                            0, 12, 0, 0),
                                         child: TextFormField(
                                           controller:
                                               _model.passwordLoginController,
@@ -233,7 +229,7 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
+                                                      fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -241,48 +237,48 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
+                                                      fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 24.0, 20.0, 24.0),
+                                                    20, 24, 20, 24),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
                                                 () => _model
@@ -298,14 +294,14 @@ class _LoginPageState extends State<LoginPage>
                                                     : Icons
                                                         .visibility_off_outlined,
                                                 color: Color(0xFF95A1AC),
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                             ),
                                           ),
                                           style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 color: Color(0xFF0F1113),
-                                                fontSize: 16.0,
+                                                fontSize: 16,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           validator: _model
@@ -315,7 +311,7 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 24.0, 0.0, 0.0),
+                                            0, 24, 0, 0),
                                         child: GSLButton(
                                           onPressed: () async {
                                             GoRouter.of(context)
@@ -340,30 +336,30 @@ class _LoginPageState extends State<LoginPage>
                                           options: GSLButtonOptions(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: Color(0xFF14181B),
                                             textStyle:
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Colors.white,
-                                                      fontSize: 16.0,
+                                                      fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                            elevation: 3.0,
+                                            elevation: 3,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                            0, 20, 0, 0),
                                         child: GSLButton(
                                           onPressed: () {
                                             print(
@@ -373,28 +369,28 @@ class _LoginPageState extends State<LoginPage>
                                           options: GSLButtonOptions(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: Color(0x0039D2C0),
                                             textStyle: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF14181B),
-                                                  fontSize: 18.0,
+                                                  fontSize: 18,
                                                   fontWeight: FontWeight.w500,
                                                 ),
-                                            elevation: 0.0,
+                                            elevation: 0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 0.0, 20.0, 0.0),
+                                            20, 0, 20, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -402,15 +398,14 @@ class _LoginPageState extends State<LoginPage>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 12.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 12, 0, 0),
                                               child: Text(
                                                 'Or use a social account to login',
                                                 style:
                                                     TextStyle(
                                                           fontFamily: 'Outfit',
                                                           color: Color(0xFF57636C),
-                                                          fontSize: 16.0,
+                                                          fontSize: 16,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -421,7 +416,7 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 16.0, 0.0, 8.0),
+                                            0, 16, 0, 8),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -447,66 +442,25 @@ class _LoginPageState extends State<LoginPage>
                                                     context.mounted);
                                               },
                                               child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
+                                                width: 50,
+                                                height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFF0F1113),
                                                   boxShadow: [
                                                     BoxShadow(
-                                                      blurRadius: 5.0,
+                                                      blurRadius: 5,
                                                       color: Color(0x3314181B),
-                                                      offset: Offset(0.0, 2.0),
+                                                      offset: Offset(0, 2),
                                                     )
                                                   ],
                                                   shape: BoxShape.circle,
                                                 ),
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
                                                 child: FaIcon(
                                                   FontAwesomeIcons.google,
                                                   color: Colors.white,
-                                                  size: 24.0,
-                                                ),
-                                              ),
-                                            ),
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                GoRouter.of(context)
-                                                    .prepareAuthEvent();
-                                                final user = await authManager
-                                                    .signInWithApple(context);
-                                                if (user == null) {
-                                                  return;
-                                                }
-
-                                                context.goNamedAuth('homepage',
-                                                    context.mounted);
-                                              },
-                                              child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFF0F1113),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      blurRadius: 5.0,
-                                                      color: Color(0x3314181B),
-                                                      offset: Offset(0.0, 2.0),
-                                                    )
-                                                  ],
-                                                  shape: BoxShape.circle,
-                                                ),
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: FaIcon(
-                                                  FontAwesomeIcons.apple,
-                                                  color: Colors.white,
-                                                  size: 24.0,
+                                                  size: 24,
                                                 ),
                                               ),
                                             ),
@@ -530,25 +484,25 @@ class _LoginPageState extends State<LoginPage>
                                                     context.mounted);
                                               },
                                               child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
+                                                width: 50,
+                                                height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFF0F1113),
                                                   boxShadow: [
                                                     BoxShadow(
-                                                      blurRadius: 5.0,
+                                                      blurRadius: 5,
                                                       color: Color(0x3314181B),
-                                                      offset: Offset(0.0, 2.0),
+                                                      offset: Offset(0, 2),
                                                     )
                                                   ],
                                                   shape: BoxShape.circle,
                                                 ),
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
                                                 child: FaIcon(
                                                   FontAwesomeIcons.facebookF,
                                                   color: Colors.white,
-                                                  size: 24.0,
+                                                  size: 24,
                                                 ),
                                               ),
                                             ),
@@ -561,14 +515,14 @@ class _LoginPageState extends State<LoginPage>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    44.0, 0.0, 44.0, 0.0),
+                                    44, 0, 44, 0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                            0, 20, 0, 0),
                                         child: TextFormField(
                                           controller:
                                               _model.emailAddressController,
@@ -579,7 +533,7 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Outfit',
                                                       color: Color(0xFF57636C),
-                                                      fontSize: 16.0,
+                                                      fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -587,53 +541,53 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
+                                                      fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 24.0, 20.0, 24.0),
+                                                    20, 24, 20, 24),
                                           ),
                                           style: TextStyle(
                                                 fontFamily: 'Lexend Deca',
                                                 color: Color(0xFF14181B),
-                                                fontSize: 14.0,
+                                                fontSize: 14,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           maxLines: null,
@@ -644,7 +598,7 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 0.0),
+                                            0, 12, 0, 0),
                                         child: TextFormField(
                                           controller: _model.passwordController,
                                           obscureText:
@@ -655,7 +609,7 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Outfit',
                                                       color: Color(0xFF57636C),
-                                                      fontSize: 16.0,
+                                                      fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -663,48 +617,48 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
+                                                      fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 24.0, 20.0, 24.0),
+                                                    20, 24, 20, 24),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
                                                 () => _model
@@ -719,14 +673,14 @@ class _LoginPageState extends State<LoginPage>
                                                     : Icons
                                                         .visibility_off_outlined,
                                                 color: Color(0xFF95A1AC),
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                             ),
                                           ),
                                           style: TextStyle(
                                                 fontFamily: 'Lexend Deca',
                                                 color: Color(0xFF14181B),
-                                                fontSize: 14.0,
+                                                fontSize: 14,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           validator: _model
@@ -736,7 +690,7 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 0.0),
+                                            0, 12, 0, 0),
                                         child: TextFormField(
                                           controller:
                                               _model.passwordConfirmController,
@@ -748,7 +702,7 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Outfit',
                                                       color: Color(0xFF57636C),
-                                                      fontSize: 16.0,
+                                                      fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -756,48 +710,48 @@ class _LoginPageState extends State<LoginPage>
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
+                                                      fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 24.0, 20.0, 24.0),
+                                                    20, 24, 20, 24),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
                                                 () => _model
@@ -813,14 +767,14 @@ class _LoginPageState extends State<LoginPage>
                                                     : Icons
                                                         .visibility_off_outlined,
                                                 color: Color(0xFF95A1AC),
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                             ),
                                           ),
                                           style: TextStyle(
                                                 fontFamily: 'Lexend Deca',
                                                 color: Color(0xFF14181B),
-                                                fontSize: 14.0,
+                                                fontSize: 14,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           validator: _model
@@ -830,7 +784,7 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 24.0, 0.0, 0.0),
+                                            0, 24, 0, 0),
                                         child: GSLButton(
                                           onPressed: () async {
                                             GoRouter.of(context)
@@ -868,30 +822,30 @@ class _LoginPageState extends State<LoginPage>
                                           options: GSLButtonOptions(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    7.0, 0.0, 7.0, 0.0),
+                                                    7, 0, 7, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: Color(0xFF14181B),
                                             textStyle:
                                                 TextStyle(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Colors.white,
-                                                      fontSize: 16.0,
+                                                      fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                            elevation: 3.0,
+                                            elevation: 3,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 20.0, 20.0, 0.0),
+                                            20, 20, 20, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -900,8 +854,7 @@ class _LoginPageState extends State<LoginPage>
                                             Expanded(
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 12.0, 0.0, 0.0),
+                                                    .fromSTEB(0, 12, 0, 0),
                                                 child: Text(
                                                   'Or use a social account to create account',
                                                   textAlign: TextAlign.center,
@@ -909,7 +862,7 @@ class _LoginPageState extends State<LoginPage>
                                                         fontFamily: 'Outfit',
                                                         color:
                                                             Color(0xFF57636C),
-                                                        fontSize: 16.0,
+                                                        fontSize: 16,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -921,7 +874,7 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 16.0, 0.0, 8.0),
+                                            0, 16, 0, 8),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -946,66 +899,25 @@ class _LoginPageState extends State<LoginPage>
                                                     context.mounted);
                                               },
                                               child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
+                                                width: 50,
+                                                height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFF0F1113),
                                                   boxShadow: [
                                                     BoxShadow(
-                                                      blurRadius: 5.0,
+                                                      blurRadius: 5,
                                                       color: Color(0x3314181B),
-                                                      offset: Offset(0.0, 2.0),
+                                                      offset: Offset(0, 2),
                                                     )
                                                   ],
                                                   shape: BoxShape.circle,
                                                 ),
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
                                                 child: FaIcon(
                                                   FontAwesomeIcons.google,
                                                   color: Colors.white,
-                                                  size: 24.0,
-                                                ),
-                                              ),
-                                            ),
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                GoRouter.of(context)
-                                                    .prepareAuthEvent();
-                                                final user = await authManager
-                                                    .signInWithApple(context);
-                                                if (user == null) {
-                                                  return;
-                                                }
-
-                                                context.goNamedAuth('homepage',
-                                                    context.mounted);
-                                              },
-                                              child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFF0F1113),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      blurRadius: 5.0,
-                                                      color: Color(0x3314181B),
-                                                      offset: Offset(0.0, 2.0),
-                                                    )
-                                                  ],
-                                                  shape: BoxShape.circle,
-                                                ),
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: FaIcon(
-                                                  FontAwesomeIcons.apple,
-                                                  color: Colors.white,
-                                                  size: 24.0,
+                                                  size: 24,
                                                 ),
                                               ),
                                             ),
@@ -1029,25 +941,25 @@ class _LoginPageState extends State<LoginPage>
                                                     context.mounted);
                                               },
                                               child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
+                                                width: 50,
+                                                height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFF0F1113),
                                                   boxShadow: [
                                                     BoxShadow(
-                                                      blurRadius: 5.0,
+                                                      blurRadius: 5,
                                                       color: Color(0x3314181B),
-                                                      offset: Offset(0.0, 2.0),
+                                                      offset: Offset(0, 2),
                                                     )
                                                   ],
                                                   shape: BoxShape.circle,
                                                 ),
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
                                                 child: FaIcon(
                                                   FontAwesomeIcons.facebookF,
                                                   color: Colors.white,
-                                                  size: 24.0,
+                                                  size: 24,
                                                 ),
                                               ),
                                             ),
