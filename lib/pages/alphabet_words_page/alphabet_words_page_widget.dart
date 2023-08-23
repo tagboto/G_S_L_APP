@@ -6,8 +6,6 @@ import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
-import 'alphabet_words_page_model.dart';
-export 'alphabet_words_page_model.dart';
 
 class AlphabetWordsPageWidget extends StatefulWidget {
   const AlphabetWordsPageWidget({Key? key}) : super(key: key);
@@ -19,7 +17,6 @@ class AlphabetWordsPageWidget extends StatefulWidget {
 
 class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
     with TickerProviderStateMixin {
-  late AlphabetWordsPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -67,7 +64,6 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AlphabetWordsPageModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -79,7 +75,6 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
 
   @override
   void dispose() {
-    _model.dispose();
 
     super.dispose();
   }
@@ -111,18 +106,8 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
             ),
           );
         }
-        // List<AlphabetsRecord> alphabetWordsPageAlphabetsRecordList =
-        //     snapshot.data!;
-        // // Return an empty Container when the item does not exist.
-        // if (snapshot.data!.isEmpty) {
-        //   return Container();
-        // }
-        // final alphabetWordsPageAlphabetsRecord =
-        //     alphabetWordsPageAlphabetsRecordList.isNotEmpty
-        //         ? alphabetWordsPageAlphabetsRecordList.first
-        //         : null;
+   
         return GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -131,7 +116,7 @@ class _AlphabetWordsPageWidgetState extends State<AlphabetWordsPageWidget>
               automaticallyImplyLeading: true,
               title: Text(
                 GSLAppState().categoryName,
-                //style: FlutterFlowTheme.of(context).titleMedium,
+                style: FlutterFlowTheme.of(context).titleMedium,
               ),
               actions: [],
               centerTitle: true,
