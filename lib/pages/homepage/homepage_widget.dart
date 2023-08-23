@@ -1,11 +1,14 @@
 import '/backend/backend.dart';
-import '../../gsl_flow/gsl_flow_animations.dart';
-import '../../gsl_flow/gsl_flow_theme.dart';
-import '../../gsl_flow/gsl_flow_util.dart';
+import '/gsl_flow/gsl_flow_animations.dart';
+import '/gsl_flow/gsl_flow_util.dart';
+import '/gsl_flow/gsl_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+
+import 'homepage_model.dart';
+export 'homepage_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,9 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with TickerProviderStateMixin {
-  TabController? tabBarController;
-  int get tabBarCurrentIndex =>
-      tabBarController != null ? tabBarController!.index : 0;
+  late HomepageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -30,15 +31,15 @@ class _HomePageState extends State<HomePage>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
+          begin: 0,
+          end: 1,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(30.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: Offset(30, 0),
+          end: Offset(0, 0),
         ),
       ],
     ),
@@ -49,15 +50,15 @@ class _HomePageState extends State<HomePage>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
+          begin: 0,
+          end: 1,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: Offset(50, 0),
+          end: Offset(0, 0),
         ),
       ],
     ),
@@ -68,15 +69,15 @@ class _HomePageState extends State<HomePage>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
+          begin: 0,
+          end: 1,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(30.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: Offset(30, 0),
+          end: Offset(0, 0),
         ),
       ],
     ),
@@ -87,15 +88,15 @@ class _HomePageState extends State<HomePage>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
+          begin: 0,
+          end: 1,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: Offset(0, 30),
+          end: Offset(0, 0),
         ),
       ],
     ),
@@ -106,15 +107,15 @@ class _HomePageState extends State<HomePage>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
+          begin: 0,
+          end: 1,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 40.0),
-          end: Offset(0.0, 0.0),
+          begin: Offset(0, 40),
+          end: Offset(0, 0),
         ),
       ],
     ),
@@ -123,8 +124,9 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => HomepageModel());
 
-    tabBarController = TabController(
+    _model.tabBarController = TabController(
       vsync: this,
       length: 2,
       initialIndex: 0,
@@ -139,6 +141,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   void dispose() {
+    _model.dispose();
 
     super.dispose();
   }
@@ -148,6 +151,7 @@ class _HomePageState extends State<HomePage>
     context.watch<GSLAppState>();
 
     return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: GSLAppTheme.of(context).primaryBackground,
@@ -157,7 +161,7 @@ class _HomePageState extends State<HomePage>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 44.0, 16.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 44, 16, 12),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -173,11 +177,10 @@ class _HomePageState extends State<HomePage>
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         color: GSLAppTheme.of(context).primary,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40.0),
+                          borderRadius: BorderRadius.circular(40),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              2.0, 2.0, 2.0, 2.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -187,11 +190,11 @@ class _HomePageState extends State<HomePage>
                               context.pushNamed('userprofilePage');
                             },
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(40.0),
+                              borderRadius: BorderRadius.circular(40),
                               child: Image.network(
                                 'https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-                                width: 40.0,
-                                height: 40.0,
+                                width: 40,
+                                height: 40,
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -200,8 +203,7 @@ class _HomePageState extends State<HomePage>
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,8 +213,7 @@ class _HomePageState extends State<HomePage>
                             style: GSLAppTheme.of(context).titleLarge,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 4.0, 0.0, 0.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
                               'Good morning Zoe!',
                               style: GSLAppTheme.of(context).labelMedium,
@@ -225,7 +226,7 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 0, 0),
                 child: Text(
                   'Categories',
                   style: GSLAppTheme.of(context).headlineSmall,
@@ -233,7 +234,7 @@ class _HomePageState extends State<HomePage>
               ),
               Container(
                 width: double.infinity,
-                height: 250.0,
+                height: 250,
                 decoration: BoxDecoration(
                   color: GSLAppTheme.of(context).primaryBackground,
                 ),
@@ -244,8 +245,7 @@ class _HomePageState extends State<HomePage>
                   scrollDirection: Axis.horizontal,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 12.0, 12.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 12, 12, 12),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -260,18 +260,19 @@ class _HomePageState extends State<HomePage>
                           context.pushNamed('numberWordsPage');
                         },
                         child: Container(
-                          width: 230.0,
-                          height: 50.0,
+                          width: 230,
+                          height: 50,
                           decoration: BoxDecoration(
-                            color: Color(0xFFFFFFFF),
+                            color: GSLAppTheme.of(context)
+                                .secondaryBackground,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 4.0,
+                                blurRadius: 4,
                                 color: Color(0x34090F13),
-                                offset: Offset(0.0, 2.0),
+                                offset: Offset(0, 2),
                               )
                             ],
-                            borderRadius: BorderRadius.circular(12.0),
+                            borderRadius: BorderRadius.circular(12),
                           ),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -289,27 +290,27 @@ class _HomePageState extends State<HomePage>
                               children: [
                                 Container(
                                   width: double.infinity,
-                                  height: 140.0,
+                                  height: 140,
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
                                         GSLAppTheme.of(context).primary,
                                         GSLAppTheme.of(context).secondary
                                       ],
-                                      stops: [0.0, 1.0],
-                                      begin: AlignmentDirectional(0.0, -1.0),
-                                      end: AlignmentDirectional(0, 1.0),
+                                      stops: [0, 1],
+                                      begin: AlignmentDirectional(0, -1),
+                                      end: AlignmentDirectional(0, 1),
                                     ),
                                     borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(0.0),
-                                      bottomRight: Radius.circular(0.0),
-                                      topLeft: Radius.circular(12.0),
-                                      topRight: Radius.circular(12.0),
+                                      bottomLeft: Radius.circular(0),
+                                      bottomRight: Radius.circular(0),
+                                      topLeft: Radius.circular(12),
+                                      topRight: Radius.circular(12),
                                     ),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
+                                        12, 12, 12, 12),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -318,32 +319,35 @@ class _HomePageState extends State<HomePage>
                                           CrossAxisAlignment.start,
                                       children: [
                                         Container(
-                                          width: 36.0,
-                                          height: 36.0,
+                                          width: 36,
+                                          height: 36,
                                           decoration: BoxDecoration(
                                             color: Color(0x98FFFFFF),
                                             borderRadius:
-                                                BorderRadius.circular(12.0),
+                                                BorderRadius.circular(12),
                                           ),
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                          alignment: AlignmentDirectional(0, 0),
                                           child: FaIcon(
                                             FontAwesomeIcons
                                                 .handsAslInterpreting,
                                             color: Colors.white,
-                                            size: 20.0,
+                                            size: 20,
                                           ),
                                         ),
                                         Text(
                                           'Alphabets',
-                                          style: TextStyle(
+                                          style: GSLAppTheme.of(context)
+                                              .titleMedium
+                                              .override(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.white,
                                               ),
                                         ),
                                         Text(
                                           '26 Items',
-                                          style: TextStyle(
+                                          style: GSLAppTheme.of(context)
+                                              .bodyMedium
+                                              .override(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.white,
                                               ),
@@ -360,22 +364,21 @@ class _HomePageState extends State<HomePage>
                           animationsMap['containerOnPageLoadAnimation1']!),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 16.0, 12.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 16, 12),
                       child: Container(
-                        width: 230.0,
-                        height: 50.0,
+                        width: 230,
+                        height: 50,
                         decoration: BoxDecoration(
                           color:
-                              Color(0xFFFFFFFF),
+                              GSLAppTheme.of(context).secondaryBackground,
                           boxShadow: [
                             BoxShadow(
-                              blurRadius: 4.0,
+                              blurRadius: 4,
                               color: Color(0x34090F13),
-                              offset: Offset(0.0, 2.0),
+                              offset: Offset(0, 2),
                             )
                           ],
-                          borderRadius: BorderRadius.circular(12.0),
+                          borderRadius: BorderRadius.circular(12),
                         ),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -395,19 +398,19 @@ class _HomePageState extends State<HomePage>
                             children: [
                               Container(
                                 width: double.infinity,
-                                height: 140.0,
+                                height: 140,
                                 decoration: BoxDecoration(
                                   color: GSLAppTheme.of(context).tertiary,
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(12.0),
-                                    topRight: Radius.circular(12.0),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                    topLeft: Radius.circular(12),
+                                    topRight: Radius.circular(12),
                                   ),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
+                                      12, 12, 12, 12),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -416,31 +419,34 @@ class _HomePageState extends State<HomePage>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: 36.0,
-                                        height: 36.0,
+                                        width: 36,
+                                        height: 36,
                                         decoration: BoxDecoration(
                                           color: Color(0x98FFFFFF),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(12),
                                         ),
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                        alignment: AlignmentDirectional(0, 0),
                                         child: Icon(
                                           Icons.design_services_outlined,
                                           color: Colors.white,
-                                          size: 20.0,
+                                          size: 20,
                                         ),
                                       ),
                                       Text(
                                         'Family',
-                                        style: TextStyle(
+                                        style: GSLAppTheme.of(context)
+                                            .titleMedium
+                                            .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
                                       ),
                                       Text(
                                         '16 Items',
-                                        style: TextStyle(
+                                        style: GSLAppTheme.of(context)
+                                            .bodyMedium
+                                            .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
@@ -456,22 +462,21 @@ class _HomePageState extends State<HomePage>
                           animationsMap['containerOnPageLoadAnimation2']!),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 12.0, 12.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 12, 12, 12),
                       child: Container(
-                        width: 230.0,
-                        height: 50.0,
+                        width: 230,
+                        height: 50,
                         decoration: BoxDecoration(
                           color:
-                              Color(0xFFFFFFFF),
+                              GSLAppTheme.of(context).secondaryBackground,
                           boxShadow: [
                             BoxShadow(
-                              blurRadius: 4.0,
+                              blurRadius: 4,
                               color: Color(0x34090F13),
-                              offset: Offset(0.0, 2.0),
+                              offset: Offset(0, 2),
                             )
                           ],
-                          borderRadius: BorderRadius.circular(12.0),
+                          borderRadius: BorderRadius.circular(12),
                         ),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -489,27 +494,27 @@ class _HomePageState extends State<HomePage>
                             children: [
                               Container(
                                 width: double.infinity,
-                                height: 140.0,
+                                height: 140,
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
                                       GSLAppTheme.of(context).primary,
                                       GSLAppTheme.of(context).secondary
                                     ],
-                                    stops: [0.0, 1.0],
-                                    begin: AlignmentDirectional(0.0, -1.0),
-                                    end: AlignmentDirectional(0, 1.0),
+                                    stops: [0, 1],
+                                    begin: AlignmentDirectional(0, -1),
+                                    end: AlignmentDirectional(0, 1),
                                   ),
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(12.0),
-                                    topRight: Radius.circular(12.0),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                    topLeft: Radius.circular(12),
+                                    topRight: Radius.circular(12),
                                   ),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
+                                      12, 12, 12, 12),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -518,32 +523,35 @@ class _HomePageState extends State<HomePage>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: 36.0,
-                                        height: 36.0,
+                                        width: 36,
+                                        height: 36,
                                         decoration: BoxDecoration(
                                           color: Color(0x98FFFFFF),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(12),
                                         ),
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                        alignment: AlignmentDirectional(0, 0),
                                         child: FaIcon(
                                           FontAwesomeIcons
-                                              .handsAslInterpreting,
+                                              .americanSignLanguageInterpreting,
                                           color: Colors.white,
-                                          size: 20.0,
+                                          size: 20,
                                         ),
                                       ),
                                       Text(
                                         'Pronouns',
-                                        style: TextStyle(
+                                        style: GSLAppTheme.of(context)
+                                            .titleMedium
+                                            .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
                                       ),
                                       Text(
                                         '39 Items',
-                                        style: TextStyle(
+                                        style: GSLAppTheme.of(context)
+                                            .bodyMedium
+                                            .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
                                             ),
@@ -559,37 +567,36 @@ class _HomePageState extends State<HomePage>
                           animationsMap['containerOnPageLoadAnimation3']!),
                     ),
                     Container(
-                      width: 100.0,
-                      height: 140.0,
+                      width: 100,
+                      height: 140,
                       decoration: BoxDecoration(
                         color: GSLAppTheme.of(context).tertiary,
                         borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(0.0),
-                          bottomRight: Radius.circular(0.0),
-                          topLeft: Radius.circular(12.0),
-                          topRight: Radius.circular(12.0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(0),
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12),
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            12.0, 12.0, 12.0, 12.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              width: 36.0,
-                              height: 36.0,
+                              width: 36,
+                              height: 36,
                               decoration: BoxDecoration(
                                 color: Color(0x98FFFFFF),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0, 0),
                               child: Icon(
                                 Icons.design_services_outlined,
                                 color: Colors.white,
-                                size: 20.0,
+                                size: 20,
                               ),
                             ),
                             Text(
@@ -618,49 +625,49 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 0, 0),
                 child: Text(
                   'Practice Tests',
                   style: GSLAppTheme.of(context).headlineSmall,
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: Container(
                   width: double.infinity,
-                  height: 400.0,
+                  height: 400,
                   decoration: BoxDecoration(
-                    color: Color(0xFFFFFFFF),
+                    color: GSLAppTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 6.0,
+                        blurRadius: 6,
                         color: Color(0x1B090F13),
-                        offset: Offset(0.0, -2.0),
+                        offset: Offset(0, -2),
                       )
                     ],
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(0.0),
-                      bottomRight: Radius.circular(0.0),
-                      topLeft: Radius.circular(16.0),
-                      topRight: Radius.circular(16.0),
+                      bottomLeft: Radius.circular(0),
+                      bottomRight: Radius.circular(0),
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                     child: Column(
                       children: [
                         Align(
-                          alignment: Alignment(0.0, 0),
+                          alignment: Alignment(0, 0),
                           child: TabBar(
                             isScrollable: true,
                             labelColor: GSLAppTheme.of(context).primary,
                             unselectedLabelColor:
-                                Color(0xFF57636C),
+                                GSLAppTheme.of(context).secondaryText,
                             labelStyle: GSLAppTheme.of(context).bodyMedium,
                             unselectedLabelStyle: TextStyle(),
                             indicatorColor:
                                 GSLAppTheme.of(context).primary,
-                            indicatorWeight: 2.0,
+                            indicatorWeight: 2,
                             tabs: [
                               Tab(
                                 text: 'Today',
@@ -669,15 +676,17 @@ class _HomePageState extends State<HomePage>
                                 text: 'Completed',
                               ),
                             ],
+                            controller: _model.tabBarController,
                             onTap: (value) => setState(() {}),
                           ),
                         ),
                         Expanded(
                           child: TabBarView(
+                            controller: _model.tabBarController,
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 12.0),
+                                    16, 12, 16, 12),
                                 child: StreamBuilder<List<CategoriesRecord>>(
                                   stream: queryCategoriesRecord(
                                     queryBuilder: (categoriesRecord) =>
@@ -689,8 +698,8 @@ class _HomePageState extends State<HomePage>
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
+                                          width: 50,
+                                          height: 50,
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
@@ -718,25 +727,25 @@ class _HomePageState extends State<HomePage>
                                         return Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 12.0),
+                                                  0, 0, 0, 12),
                                           child: Container(
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                               color:
-                                                  Color(0xFFFFFFFF),
+                                                  GSLAppTheme.of(context)
+                                                      .secondaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(12),
                                               border: Border.all(
                                                 color:
                                                     GSLAppTheme.of(context)
                                                         .alternate,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 12.0, 12.0, 12.0),
+                                                  .fromSTEB(12, 12, 12, 12),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -752,8 +761,8 @@ class _HomePageState extends State<HomePage>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 4.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 4, 0, 0),
                                                     child: Text(
                                                       'Now that you\'ve studied test your knowledge',
                                                       style:
@@ -763,8 +772,8 @@ class _HomePageState extends State<HomePage>
                                                     ),
                                                   ),
                                                   Divider(
-                                                    height: 24.0,
-                                                    thickness: 1.0,
+                                                    height: 24,
+                                                    thickness: 1,
                                                     color: GSLAppTheme.of(
                                                             context)
                                                         .alternate,
@@ -778,11 +787,8 @@ class _HomePageState extends State<HomePage>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    200.0,
-                                                                    0.0),
+                                                                .fromSTEB(0, 0,
+                                                                    200, 0),
                                                         child: Text(
                                                           'Due',
                                                           style: GSLAppTheme
@@ -811,8 +817,8 @@ class _HomePageState extends State<HomePage>
                                                               'quizMultipleChoicePage');
                                                         },
                                                         child: Container(
-                                                          width: 100.0,
-                                                          height: 32.0,
+                                                          width: 100,
+                                                          height: 32,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: GSLAppTheme
@@ -821,14 +827,17 @@ class _HomePageState extends State<HomePage>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        32.0),
+                                                                        32),
                                                           ),
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0.0, 0.0),
+                                                                  0, 0),
                                                           child: Text(
                                                             'Go',
-                                                            style: TextStyle(
+                                                            style: GSLAppTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
                                                                   fontFamily:
                                                                       'Readex Pro',
                                                                   color: Colors
@@ -852,7 +861,7 @@ class _HomePageState extends State<HomePage>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 12.0),
+                                    16, 12, 16, 12),
                                 child: StreamBuilder<List<CategoriesRecord>>(
                                   stream: queryCategoriesRecord(
                                     queryBuilder: (categoriesRecord) =>
@@ -864,8 +873,8 @@ class _HomePageState extends State<HomePage>
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
+                                          width: 50,
+                                          height: 50,
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
@@ -893,7 +902,7 @@ class _HomePageState extends State<HomePage>
                                         return Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 12.0),
+                                                  0, 0, 0, 12),
                                           child: Container(
                                             width: double.infinity,
                                             decoration: BoxDecoration(
@@ -901,18 +910,17 @@ class _HomePageState extends State<HomePage>
                                                   GSLAppTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(12),
                                               border: Border.all(
                                                 color:
                                                     GSLAppTheme.of(context)
                                                         .alternate,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 12.0, 12.0, 12.0),
+                                                  .fromSTEB(12, 12, 12, 12),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -921,7 +929,10 @@ class _HomePageState extends State<HomePage>
                                                   Text(
                                                     listViewCategoriesRecord
                                                         .categoryName,
-                                                    style: TextStyle(
+                                                    style: GSLAppTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
                                                           fontFamily: 'Outfit',
                                                           decoration:
                                                               TextDecoration
@@ -931,12 +942,15 @@ class _HomePageState extends State<HomePage>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 4.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 4, 0, 0),
                                                     child: Text(
                                                       'Congratulations! You\'ve tested your knowledge',
                                                       style:
-                                                          TextStyle(
+                                                          GSLAppTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 decoration:
@@ -946,8 +960,8 @@ class _HomePageState extends State<HomePage>
                                                     ),
                                                   ),
                                                   Divider(
-                                                    height: 24.0,
-                                                    thickness: 1.0,
+                                                    height: 24,
+                                                    thickness: 1,
                                                     color: GSLAppTheme.of(
                                                             context)
                                                         .alternate,
@@ -961,11 +975,8 @@ class _HomePageState extends State<HomePage>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    160.0,
-                                                                    0.0),
+                                                                .fromSTEB(0, 0,
+                                                                    160, 0),
                                                         child: Text(
                                                           'Completed',
                                                           style: GSLAppTheme
@@ -974,19 +985,20 @@ class _HomePageState extends State<HomePage>
                                                         ),
                                                       ),
                                                       Container(
-                                                        width: 100.0,
-                                                        height: 32.0,
+                                                        width: 100,
+                                                        height: 32,
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: Color(0xFFFFFFFF),
+                                                          color: GSLAppTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      32.0),
+                                                                  .circular(32),
                                                         ),
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0.0, 0.0),
+                                                                0, 0),
                                                         child: Text(
                                                           'Complete',
                                                           style: GSLAppTheme
