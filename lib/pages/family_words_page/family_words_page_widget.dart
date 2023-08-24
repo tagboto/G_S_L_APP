@@ -1,6 +1,6 @@
 import '/backend/backend.dart';
 import '../../gsl_flow/gsl_flow_animations.dart';
-import '../../gsl_flow/gsl_flow_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -85,13 +85,17 @@ class _FamilyWordsPageState extends State<FamilyWordsPage>
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: GSLAppTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFF1F4F8),
         appBar: AppBar(
-          backgroundColor: GSLAppTheme.of(context).primary,
+          backgroundColor: Color(0xFF4B39EF),
           automaticallyImplyLeading: true,
           title: Text(
             GSLAppState().categoryName,
-            style: GSLAppTheme.of(context).titleMedium,
+            style: GoogleFonts.getFont(
+         'Readex Pro',
+         color: Color(0xFFFFFFFF),
+         fontWeight: FontWeight.normal,
+         fontSize: 18.0,),
           ),
           actions: [],
           centerTitle: true,
@@ -111,7 +115,7 @@ class _FamilyWordsPageState extends State<FamilyWordsPage>
                     child: Text(
                       'Scroll to see a list of new words',
                       style:
-                          GSLAppTheme.of(context).headlineSmall.override(
+                          TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 18.0,
                               ),
@@ -121,7 +125,7 @@ class _FamilyWordsPageState extends State<FamilyWordsPage>
                     width: double.infinity,
                     height: 496.0,
                     decoration: BoxDecoration(
-                      color: GSLAppTheme.of(context).primaryBackground,
+                      color: Color(0xFFF1F4F8),
                     ),
                     child: StreamBuilder<List<FamilyRecord>>(
                       stream: queryFamilyRecord(
@@ -137,7 +141,7 @@ class _FamilyWordsPageState extends State<FamilyWordsPage>
                               height: 50.0,
                               child: CircularProgressIndicator(
                                 valueColor: AlwaysStoppedAnimation<Color>(
-                                  GSLAppTheme.of(context).primary,
+                                  Color(0xFF4B39EF),
                                 ),
                               ),
                             ),
@@ -251,7 +255,7 @@ class _FamilyWordsPageState extends State<FamilyWordsPage>
                 height: 40.0,
                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: GSLAppTheme.of(context).primary,
+                color: Color(0xFF4B39EF),
                 textStyle: TextStyle(
                       fontFamily: 'Readex Pro',
                       color: Colors.white,

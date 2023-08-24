@@ -1,6 +1,6 @@
 import '../../gsl_flow/gsl_flow_checkbox_group.dart';
 import '../../gsl_flow/gsl_flow_icon_button.dart';
-import '../../gsl_flow/gsl_flow_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import '../../gsl_flow/form_field_controller.dart';
@@ -39,9 +39,9 @@ class _QuizMultipleChoicePageState
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: GSLAppTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFF1F4F8),
         appBar: AppBar(
-          backgroundColor: GSLAppTheme.of(context).primary,
+          backgroundColor: Color(0xFF4B39EF),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -62,7 +62,7 @@ class _QuizMultipleChoicePageState
             children: [
               Text(
                 'Test your knowledge of the',
-                style: GSLAppTheme.of(context).headlineMedium.override(
+                style: TextStyle(
                       fontFamily: 'Outfit',
                       color: Colors.white,
                       fontSize: 22.0,
@@ -70,7 +70,11 @@ class _QuizMultipleChoicePageState
               ),
               Text(
                 GSLAppState().categoryName,
-                style: GSLAppTheme.of(context).titleMedium,
+                style: GoogleFonts.getFont(
+         'Readex Pro',
+         color: Color(0xFFFFFFFF),
+         fontWeight: FontWeight.normal,
+         fontSize: 18.0,),
               ),
             ],
           ),
@@ -97,7 +101,12 @@ class _QuizMultipleChoicePageState
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                         child: Text(
                           'What is this word?',
-                          style: GSLAppTheme.of(context).headlineLarge,
+                          style: GoogleFonts.getFont(
+        'Outfit',
+         color: Color(0xFF14181B),
+         fontWeight: FontWeight.w600,
+        fontSize: 32.0,
+       ),
                         ),
                       ),
                       Card(
@@ -141,12 +150,17 @@ class _QuizMultipleChoicePageState
                                       FormFieldController<List<String>>(
                                 [],
                               ),
-                              activeColor: GSLAppTheme.of(context).primary,
-                              checkColor: GSLAppTheme.of(context).info,
+                              activeColor: Color(0xFF4B39EF),
+                              checkColor: Color(0xFFFFFFFF),
                               checkboxBorderColor:
                                   Color(0xFF57636C),
                               textStyle:
-                                  GSLAppTheme.of(context).bodyMedium,
+                                  GoogleFonts.getFont(
+        'Readex Pro',
+         color: Color(0xFF14181B),
+         fontWeight: FontWeight.normal,
+         fontSize: 14.0,
+       ),
                               checkboxBorderRadius: BorderRadius.circular(4.0),
                               initialized: checkboxGroupValues != null,
                             ),
@@ -167,7 +181,7 @@ class _QuizMultipleChoicePageState
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: GSLAppTheme.of(context).primary,
+                  color: Color(0xFF4B39EF),
                   textStyle: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: Colors.white,

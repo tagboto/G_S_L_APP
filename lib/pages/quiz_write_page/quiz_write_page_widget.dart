@@ -1,11 +1,10 @@
 import '../../gsl_flow/gsl_flow_icon_button.dart';
-import '../../gsl_flow/gsl_flow_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'quiz_write_page_model.dart';
-// export 'quiz_write_page_model.dart';
+
 
 class QuizWritePage extends StatefulWidget {
   const QuizWritePage({Key? key}) : super(key: key);
@@ -28,7 +27,7 @@ class _QuizWritePageState extends State<QuizWritePage> {
   }
 
   @override
-  void dispose() {;
+  void dispose() {
 
     super.dispose();
   }
@@ -40,9 +39,9 @@ class _QuizWritePageState extends State<QuizWritePage> {
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: GSLAppTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFF1F4F8),
         appBar: AppBar(
-          backgroundColor: GSLAppTheme.of(context).primary,
+          backgroundColor: Color(0xFF4B39EF),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -60,7 +59,7 @@ class _QuizWritePageState extends State<QuizWritePage> {
           ),
           title: Text(
             'Learn the [      ]',
-            style: GSLAppTheme.of(context).headlineMedium.override(
+            style: TextStyle(
                   fontFamily: 'Outfit',
                   color: Colors.white,
                   fontSize: 22.0,
@@ -89,7 +88,12 @@ class _QuizWritePageState extends State<QuizWritePage> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                         child: Text(
                           'Write down the corresponding word in the box below',
-                          style: GSLAppTheme.of(context).headlineLarge,
+                          style: GoogleFonts.getFont(
+        'Outfit',
+         color: Color(0xFF14181B),
+         fontWeight: FontWeight.w600,
+        fontSize: 32.0,
+       ),
                         ),
                       ),
                       ClipRRect(
@@ -121,13 +125,22 @@ class _QuizWritePageState extends State<QuizWritePage> {
                                 decoration: InputDecoration(
                                   labelText: 'Write your answer here',
                                   labelStyle:
-                                      GSLAppTheme.of(context).labelMedium,
+                                      GoogleFonts.getFont(
+        'Readex Pro',
+         color: Color(0xFF57636C),
+         fontWeight: FontWeight.normal,
+         fontSize: 14.0,
+       ),
                                   hintStyle:
-                                      GSLAppTheme.of(context).labelMedium,
+                                      GoogleFonts.getFont(
+        'Readex Pro',
+         color: Color(0xFF57636C),
+         fontWeight: FontWeight.normal,
+         fontSize: 14.0,
+       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: GSLAppTheme.of(context)
-                                          .alternate,
+                                      color: Color(0xFFE0E3E7),
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
@@ -135,27 +148,32 @@ class _QuizWritePageState extends State<QuizWritePage> {
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color:
-                                          GSLAppTheme.of(context).primary,
+                                          Color(0xFF4B39EF),
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: GSLAppTheme.of(context).error,
+                                      color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: GSLAppTheme.of(context).error,
+                                      color: Color(0xFFFF5963),
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
-                                style: GSLAppTheme.of(context).bodyMedium,
+                                style: GoogleFonts.getFont(
+        'Readex Pro',
+         color: Color(0xFF14181B),
+         fontWeight: FontWeight.normal,
+         fontSize: 14.0,
+       ),
                                 validator: textControllerValidator
                                     .asValidator(context),
                               ),
@@ -177,7 +195,7 @@ class _QuizWritePageState extends State<QuizWritePage> {
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: GSLAppTheme.of(context).primary,
+                  color: Color(0xFF4B39EF),
                   textStyle: TextStyle(
                         fontFamily: 'Readex Pro',
                         color: Colors.white,

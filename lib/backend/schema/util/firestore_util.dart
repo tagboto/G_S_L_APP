@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '/backend/schema/util/schema_util.dart';
-import '../../../gsl_flow/gsl_flow_util.dart';
 
 typedef RecordBuilder<T> = T Function(DocumentSnapshot snapshot);
 
@@ -44,14 +42,7 @@ Map<String, dynamic> mapFromFirestore(Map<String, dynamic> data) =>
       if (value is Iterable && value.isNotEmpty && value.first is Timestamp) {
         value = value.map((v) => (v as Timestamp).toDate()).toList();
       }
-      // Handle GeoPoint
-      if (value is GeoPoint) {
-        value = value.toLatLng();
-      }
-      // Handle list of GeoPoint
-      if (value is Iterable && value.isNotEmpty && value.first is GeoPoint) {
-        value = value.map((v) => (v as GeoPoint).toLatLng()).toList();
-      }
+
       // Handle nested data.
       if (value is Map) {
         value = mapFromFirestore(value as Map<String, dynamic>);
@@ -67,14 +58,6 @@ Map<String, dynamic> mapFromFirestore(Map<String, dynamic> data) =>
 
 Map<String, dynamic> mapToFirestore(Map<String, dynamic> data) =>
     data.where((k, v) => k != FirestoreUtilData.name).map((key, value) {
-      // Handle GeoPoint
-      if (value is LatLng) {
-        value = value.toGeoPoint();
-      }
-      // Handle list of GeoPoint
-      if (value is Iterable && value.isNotEmpty && value.first is LatLng) {
-        value = value.map((v) => (v as LatLng).toGeoPoint()).toList();
-      }
       // Handle Color
       if (value is Color) {
         value = value.toCssString();
@@ -96,16 +79,6 @@ Map<String, dynamic> mapToFirestore(Map<String, dynamic> data) =>
       return MapEntry(key, value);
     });
 
-List<GeoPoint>? convertToGeoPointList(List<LatLng>? list) =>
-    list?.map((e) => e.toGeoPoint()).toList();
-
-extension GeoPointExtension on LatLng {
-  GeoPoint toGeoPoint() => GeoPoint(latitude, longitude);
-}
-
-extension LatLngExtension on GeoPoint {
-  LatLng toLatLng() => LatLng(latitude, longitude);
-}
 
 DocumentReference toRef(String ref) => FirebaseFirestore.instance.doc(ref);
 

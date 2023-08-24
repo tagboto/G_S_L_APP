@@ -7,7 +7,6 @@ import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
 import 'backend/firebase/firebase_config.dart';
-import 'gsl_flow/gsl_flow_theme.dart';
 import 'gsl_flow/gsl_flow_util.dart';
 import 'gsl_flow/internationalization.dart';
 void main() async {
@@ -15,7 +14,7 @@ void main() async {
   usePathUrlStrategy();
   await initFirebase();
 
-  await GSLAppTheme.initialize();
+  //await GSLAppTheme.initialize();
 
   final appState = GSLAppState(); // Initialize GSLAppState
   await appState.initializePersistedState();
@@ -37,7 +36,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  ThemeMode _themeMode = GSLAppTheme.themeMode;
+ // ThemeMode _themeMode = GSLAppTheme.themeMode;
 
   late Stream<BaseAuthUser> userStream;
 
@@ -62,10 +61,10 @@ class _MyAppState extends State<MyApp> {
     setState(() => _locale = createLocale(language));
   }
 
-  void setThemeMode(ThemeMode mode) => setState(() {
-        _themeMode = mode;
-        GSLAppTheme.saveThemeMode(mode);
-      });
+  // void setThemeMode(ThemeMode mode) => setState(() {
+  //       _themeMode = mode;
+  //       GSLAppTheme.saveThemeMode(mode);
+  //     });
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +88,7 @@ class _MyAppState extends State<MyApp> {
         brightness: Brightness.dark,
         scrollbarTheme: ScrollbarThemeData(),
       ),
-      themeMode: _themeMode,
+      //themeMode: _themeMode,
       routerConfig: _router,
     );
   }

@@ -4,19 +4,22 @@ import 'package:flutter/material.dart';
 import '../../auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/gsl_flow/gsl_flow_theme.dart';
 import '/gsl_flow/gsl_flow_util.dart';
 export 'package:go_router/go_router.dart';
-export 'serialization_util.dart';
 
+
+// Constant used as a key for transition information.
 const kTransitionInfoKey = '__transition_info__';
 
+
+// This class manages the application state.
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
   static AppStateNotifier? _instance; 
   static AppStateNotifier get instance => _instance ??= AppStateNotifier._();
 
+// state information i keep track of
   BaseAuthUser? initialUser;
   BaseAuthUser? user;
   bool showSplashImage = true;
@@ -24,7 +27,7 @@ class AppStateNotifier extends ChangeNotifier {
 
   /// Determines whether the app will refresh and build again when a sign
   /// in or sign out happens. This is useful when the app is launched or
-  /// on an unexpected logout. However, this must be turned oGSL when we
+  /// on an unexpected logout. However, this must be turned off when we
   /// intend to sign in/out and then navigate or perform any actions after.
   /// Otherwise, this will trigger a refresh and interrupt the action(s).
   bool notifyOnAuthChange = true;
@@ -64,6 +67,7 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
+// Function to create the application's router.
 GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
@@ -140,6 +144,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
+// Extensions add methods to existing classes to simplify usage.
+// The following extensions add methods for navigation and handling redirects.
+
+// Extension for working with named navigation with authentication checks.
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(
         entries
@@ -250,27 +258,6 @@ class GSLParameters {
         ),
       ).onError((_, __) => [false]).then((v) => v.every((e) => e));
 
-  dynamic getParam<T>(
-    String paramName,
-    ParamType type, [
-    bool isList = false,
-    List<String>? collectionNamePath,
-  ]) {
-    if (futureParamValues.containsKey(paramName)) {
-      return futureParamValues[paramName];
-    }
-    if (!state.allParams.containsKey(paramName)) {
-      return null;
-    }
-    final param = state.allParams[paramName];
-    // Got parameter from `extras`, so just directly return it.
-    if (param is! String) {
-      return param;
-    }
-    // Return serialized value.
-    return deserializeParam<T>(param, type, isList,
-        collectionNamePath: collectionNamePath);
-  }
 }
 
 class GSLRoute {
@@ -321,7 +308,7 @@ class GSLRoute {
                     height: 50.0,
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
-                        GSLAppTheme.of(context).primary,
+                        Color(0xFF4B39EF),
                       ),
                     ),
                   ),

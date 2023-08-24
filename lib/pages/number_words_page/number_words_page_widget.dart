@@ -1,6 +1,6 @@
 import '/backend/backend.dart';
 import '../../gsl_flow/gsl_flow_animations.dart';
-import '../../gsl_flow/gsl_flow_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -92,14 +92,14 @@ class _NumberWordsPageState extends State<NumberWordsPage>
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: GSLAppTheme.of(context).primaryBackground,
+            backgroundColor: Color(0xFFF1F4F8),
             body: Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    GSLAppTheme.of(context).primary,
+                    Color(0xFF4B39EF),
                   ),
                 ),
               ),
@@ -118,13 +118,17 @@ class _NumberWordsPageState extends State<NumberWordsPage>
         return GestureDetector(
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: GSLAppTheme.of(context).primaryBackground,
+            backgroundColor: Color(0xFFF1F4F8),
             appBar: AppBar(
-              backgroundColor: GSLAppTheme.of(context).primary,
+              backgroundColor: Color(0xFF4B39EF),
               automaticallyImplyLeading: true,
               title: Text(
                 GSLAppState().categoryName,
-                style: GSLAppTheme.of(context).titleMedium,
+                style: GoogleFonts.getFont(
+         'Readex Pro',
+         color: Color(0xFFFFFFFF),
+         fontWeight: FontWeight.normal,
+         fontSize: 18.0,),
               ),
               actions: [],
               centerTitle: true,
@@ -153,7 +157,7 @@ class _NumberWordsPageState extends State<NumberWordsPage>
                         width: double.infinity,
                         height: 496.0,
                         decoration: BoxDecoration(
-                          color: GSLAppTheme.of(context).primaryBackground,
+                          color: Color(0xFFF1F4F8),
                         ),
                         child: StreamBuilder<List<NumbersRecord>>(
                           stream: queryNumbersRecord(
@@ -169,7 +173,7 @@ class _NumberWordsPageState extends State<NumberWordsPage>
                                   height: 50.0,
                                   child: CircularProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
-                                      GSLAppTheme.of(context).primary,
+                                      Color(0xFF4B39EF),
                                     ),
                                   ),
                                 ),
@@ -293,7 +297,7 @@ class _NumberWordsPageState extends State<NumberWordsPage>
                         EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: GSLAppTheme.of(context).primary,
+                    color: Color(0xFF4B39EF),
                     textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,

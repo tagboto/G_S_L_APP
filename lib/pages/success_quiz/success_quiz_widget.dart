@@ -1,4 +1,3 @@
-import '../../gsl_flow/gsl_flow_theme.dart';
 import '../../gsl_flow/gsl_flow_util.dart';
 import '../../gsl_flow/gsl_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +33,7 @@ class _SuccessQuizState extends State<SuccessQuiz> {
     return GestureDetector(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: GSLAppTheme.of(context).secondary,
+        backgroundColor: Color(0xFF39D2C0),
         body: SafeArea(
           top: true,
           child: Column(
@@ -61,9 +60,9 @@ class _SuccessQuizState extends State<SuccessQuiz> {
               ),
               Text(
                 'Congrats!',
-                style: GSLAppTheme.of(context).headlineMedium.override(
+                style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: GSLAppTheme.of(context).primaryBtnText,
+                      color: Color(0xFFFFFFFF),
                       fontSize: 32.0,
                     ),
               ),
@@ -73,7 +72,7 @@ class _SuccessQuizState extends State<SuccessQuiz> {
                   'Thanks for taking the quiz.',
                   style: TextStyle(
                         fontFamily: 'Readex Pro',
-                        color: GSLAppTheme.of(context).primaryBtnText,
+                        color: Color(0xFFFFFFFF),
                         fontSize: 20.0,
                         fontWeight: FontWeight.w300,
                       ),
@@ -98,10 +97,10 @@ class _SuccessQuizState extends State<SuccessQuiz> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: GSLAppTheme.of(context).primaryBtnText,
+                    color: Color(0xFFFFFFFF),
                     textStyle: TextStyle(
                           fontFamily: 'Readex Pro',
-                          color: GSLAppTheme.of(context).secondary,
+                          color: Color(0xFF39D2C0),
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
