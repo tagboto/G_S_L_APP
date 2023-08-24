@@ -29,9 +29,6 @@ mixin AnonymousSignInManager on AuthManager {
   Future<BaseAuthUser?> signInAnonymously(BuildContext context);
 }
 
-mixin AppleSignInManager on AuthManager {
-  Future<BaseAuthUser?> signInWithApple(BuildContext context);
-}
 
 mixin GoogleSignInManager on AuthManager {
   Future<BaseAuthUser?> signInWithGoogle(BuildContext context);
@@ -44,18 +41,6 @@ mixin JwtSignInManager on AuthManager {
   );
 }
 
-mixin PhoneSignInManager on AuthManager {
-  Future beginPhoneAuth({
-    required BuildContext context,
-    required String phoneNumber,
-    required void Function(BuildContext) onCodeSent,
-  });
-
-  Future verifySmsCode({
-    required BuildContext context,
-    required String smsCode,
-  });
-}
 
 mixin FacebookSignInManager on AuthManager {
   Future<BaseAuthUser?> signInWithFacebook(BuildContext context);
@@ -67,8 +52,4 @@ mixin MicrosoftSignInManager on AuthManager {
     List<String> scopes,
     String tenantId,
   );
-}
-
-mixin GithubSignInManager on AuthManager {
-  Future<BaseAuthUser?> signInWithGithub(BuildContext context);
 }

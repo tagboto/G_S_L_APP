@@ -1,18 +1,15 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth_manager.dart';
 
 import 'facebook_auth.dart';
 import 'anonymous_auth.dart';
-import 'apple_auth.dart';
 import 'email_auth.dart';
 import 'firebase_user_provider.dart';
 import 'google_auth.dart';
 import 'jwt_token_auth.dart';
-import 'github_auth.dart';
 
 export '../base_auth_user_provider.dart';
 
@@ -43,15 +40,10 @@ class FirebaseAuthManager extends AuthManager
     with
         EmailSignInManager,
         AnonymousSignInManager,
-        AppleSignInManager,
         GoogleSignInManager,
-        GithubSignInManager,
         JwtSignInManager,
-        PhoneSignInManager,
         FacebookSignInManager {
-  // Set when using phone verification (after phone number is provided).
-  // Set when using phone sign in in web mode (ignored otherwise).
-  FirebasePhoneAuthManager phoneAuthManager = FirebasePhoneAuthManager();
+
 
   @override
   Future signOut() {
@@ -150,17 +142,11 @@ class FirebaseAuthManager extends AuthManager
   ) =>
       _signInOrCreateAccount(context, anonymousSignInFunc, 'ANONYMOUS');
 
-  @override
-  Future<BaseAuthUser?> signInWithApple(BuildContext context) =>
-      _signInOrCreateAccount(context, appleSignIn, 'APPLE');
 
   @override
   Future<BaseAuthUser?> signInWithGoogle(BuildContext context) =>
       _signInOrCreateAccount(context, googleSignInFunc, 'GOOGLE');
 
-  @override
-  Future<BaseAuthUser?> signInWithGithub(BuildContext context) =>
-      _signInOrCreateAccount(context, githubSignInFunc, 'GITHUB');
 
   @override
   Future<BaseAuthUser?> signInWithJwtToken(
@@ -169,107 +155,7 @@ class FirebaseAuthManager extends AuthManager
   ) =>
       _signInOrCreateAccount(context, () => jwtTokenSignIn(jwtToken), 'JWT');
 
-  void handlePhoneAuthStateChanges(BuildContext context) {
-    phoneAuthManager.addListener(() {
-      if (!context.mounted) {
-        return;
-      }
 
-      if (phoneAuthManager.triggerOnCodeSent) {
-        phoneAuthManager.onCodeSent(context);
-        phoneAuthManager
-            .update(() => phoneAuthManager.triggerOnCodeSent = false);
-      } else if (phoneAuthManager.phoneAuthError != null) {
-        final e = phoneAuthManager.phoneAuthError!;
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Error: ${e.message!}'),
-        ));
-        phoneAuthManager.update(() => phoneAuthManager.phoneAuthError = null);
-      }
-    });
-  }
-
-  @override
-  Future beginPhoneAuth({
-    required BuildContext context,
-    required String phoneNumber,
-    required void Function(BuildContext) onCodeSent,
-  }) async {
-    phoneAuthManager.update(() => phoneAuthManager.onCodeSent = onCodeSent);
-    if (kIsWeb) {
-      phoneAuthManager.webPhoneAuthConfirmationResult =
-          await FirebaseAuth.instance.signInWithPhoneNumber(phoneNumber);
-      phoneAuthManager.update(() => phoneAuthManager.triggerOnCodeSent = true);
-      return;
-    }
-    final completer = Completer<bool>();
-    // If you'd like auto-verification, without the user having to enter the SMS
-    // code manually. Follow these instructions:
-    // * For Android: https://firebase.google.com/docs/auth/android/phone-auth?authuser=0#enable-app-verification (SafetyNet set up)
-    // * For iOS: https://firebase.google.com/docs/auth/ios/phone-auth?authuser=0#start-receiving-silent-notifications
-    // * Finally modify verificationCompleted below as instructed.
-    await FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: phoneNumber,
-      timeout:
-          Duration(seconds: 0), // Skips Android's default auto-verification
-      verificationCompleted: (phoneAuthCredential) async {
-        await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential);
-        phoneAuthManager.update(() {
-          phoneAuthManager.triggerOnCodeSent = false;
-          phoneAuthManager.phoneAuthError = null;
-        });
-        // If you've implemented auto-verification, navigate to home page or
-        // onboarding page here manually. Uncomment the lines below and replace
-        // DestinationPage() with the desired widget.
-        // await Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (_) => DestinationPage()),
-        // );
-      },
-      verificationFailed: (e) {
-        phoneAuthManager.update(() {
-          phoneAuthManager.triggerOnCodeSent = false;
-          phoneAuthManager.phoneAuthError = e;
-        });
-        completer.complete(false);
-      },
-      codeSent: (verificationId, _) {
-        phoneAuthManager.update(() {
-          phoneAuthManager.phoneAuthVerificationCode = verificationId;
-          phoneAuthManager.triggerOnCodeSent = true;
-          phoneAuthManager.phoneAuthError = null;
-        });
-        completer.complete(true);
-      },
-      codeAutoRetrievalTimeout: (_) {},
-    );
-
-    return completer.future;
-  }
-
-  @override
-  Future verifySmsCode({
-    required BuildContext context,
-    required String smsCode,
-  }) {
-    if (kIsWeb) {
-      return _signInOrCreateAccount(
-        context,
-        () => phoneAuthManager.webPhoneAuthConfirmationResult!.confirm(smsCode),
-        'PHONE',
-      );
-    } else {
-      final authCredential = PhoneAuthProvider.credential(
-        verificationId: phoneAuthManager.phoneAuthVerificationCode!,
-        smsCode: smsCode,
-      );
-      return _signInOrCreateAccount(
-        context,
-        () => FirebaseAuth.instance.signInWithCredential(authCredential),
-        'PHONE',
-      );
-    }
-  }
 
   @override
   Future<BaseAuthUser?> signInWithFacebook(BuildContext context) =>

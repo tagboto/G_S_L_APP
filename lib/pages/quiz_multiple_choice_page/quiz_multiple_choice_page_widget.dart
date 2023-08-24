@@ -43,7 +43,7 @@ class _QuizMultipleChoicePageState
         appBar: AppBar(
           backgroundColor: Color(0xFF4B39EF),
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
+          leading: GSLIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
@@ -136,7 +136,7 @@ class _QuizMultipleChoicePageState
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
-                            child: FlutterFlowCheckboxGroup(
+                            child: GSLCheckboxGroup(
                               options: [
                                 'Option 1',
                                 'Option 2',

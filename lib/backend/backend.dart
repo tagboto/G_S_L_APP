@@ -39,6 +39,7 @@ Stream<List<CategoriesRecord>> queryCategoriesRecord({
   int limit = -1,
   bool singleRecord = false,
 }) =>
+// Use a custom utility to query records in a collection as a stream
     queryCollection(
       CategoriesRecord.collection,
       CategoriesRecord.fromSnapshot,
@@ -52,6 +53,7 @@ Future<List<CategoriesRecord>> queryCategoriesRecordOnce({
   int limit = -1,
   bool singleRecord = false,
 }) =>
+// Use a custom utility to query records in a collection once (not as a stream)
     queryCollectionOnce(
       CategoriesRecord.collection,
       CategoriesRecord.fromSnapshot,

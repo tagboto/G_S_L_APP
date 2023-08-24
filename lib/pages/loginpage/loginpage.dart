@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage>
                       children: [
                         Align(
                           alignment: Alignment(0, 0),
-                          child: FlutterFlowButtonTabBar(
+                          child: GSLButtonTabBar(
                             useToggleButtonStyle: false,
                             isScrollable: true,
                             labelStyle: TextStyle(

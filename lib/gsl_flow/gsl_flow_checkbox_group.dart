@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-class FlutterFlowCheckboxGroup extends StatefulWidget {
-  const FlutterFlowCheckboxGroup({
+class GSLCheckboxGroup extends StatefulWidget {
+  const GSLCheckboxGroup({
     required this.options,
     required this.onChanged,
     required this.controller,
@@ -34,11 +34,11 @@ class FlutterFlowCheckboxGroup extends StatefulWidget {
   final TextStyle? unselectedTextStyle;
 
   @override
-  State<FlutterFlowCheckboxGroup> createState() =>
-      _FlutterFlowCheckboxGroupState();
+  State<GSLCheckboxGroup> createState() =>
+      _GSLCheckboxGroupState();
 }
 
-class _FlutterFlowCheckboxGroupState extends State<FlutterFlowCheckboxGroup> {
+class _GSLCheckboxGroupState extends State<GSLCheckboxGroup> {
   late List<String> checkboxValues;
   ValueListenable<List<String>?> get changeSelectedValues => widget.controller;
   List<String> get selectedValues => widget.controller.value ?? [];

@@ -2,7 +2,7 @@ import '/gsl_flow/gsl_flow_util.dart';
 import 'package:flutter/material.dart';
 
 
-class HomepageModel extends FlutterFlowModel {
+class HomepageModel extends GSLModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

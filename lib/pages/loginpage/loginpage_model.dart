@@ -1,7 +1,7 @@
 import '../../gsl_flow/gsl_flow_util.dart';
 import 'package:flutter/material.dart';
 
-class LoginpageModel extends FlutterFlowModel {
+class LoginpageModel extends GSLModel {
 
   final unfocusNode = FocusNode();
   // State field(s) for TabBar widget.
