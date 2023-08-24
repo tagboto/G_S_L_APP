@@ -9,9 +9,7 @@ import 'package:json_path/json_path.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher.dart';
 
-import '../main.dart';
-export 'keep_alive_wrapper.dart';
-export 'uploaded_file.dart';
+
 export '../app_state.dart';
 export 'gsl_flow_model.dart';
 export 'dart:math' show min, max;
@@ -21,7 +19,6 @@ export 'package:intl/intl.dart';
 export 'package:cloud_firestore/cloud_firestore.dart'
     show DocumentReference, FirebaseFirestore;
 export 'package:page_transition/page_transition.dart';
-export 'internationalization.dart' show GSLLocalizations;
 export 'nav/nav.dart';
 
 T valueOrDefault<T>(T? value, T defaultValue) =>
@@ -228,11 +225,6 @@ extension StringDocRef on String {
   DocumentReference get ref => FirebaseFirestore.instance.doc(this);
 }
 
-void setAppLanguage(BuildContext context, String language) =>
-    MyApp.of(context).setLocale(language);
-
-// void setDarkModeSetting(BuildContext context, ThemeMode themeMode) =>
-//     MyApp.of(context).setThemeMode(themeMode);
 
 void showSnackbar(
   BuildContext context,
